@@ -1,7 +1,7 @@
 @import '../fonts.scss';
 
 :root {
-  --font-family-main: 'Consolas', 'Times New Roman', Times, serif;
+  --font-family-main: 'Inconsolata', 'Times New Roman', Times, serif;
 
   --font-size-m: 16px;
   --font-line-m: 24px;
