@@ -4,6 +4,7 @@ import { useThemeContext } from './providers/themeProvider';
 import { classNames } from 'shared/lib';
 import { AppRouter } from './providers/router/ui/AppRouter';
 import { NavBar } from 'widgets/navBar';
+import { SideBar } from 'widgets/sideBar';
 
 export const App = () => {
   const { theme } = useThemeContext();
@@ -11,7 +12,10 @@ export const App = () => {
   return (
     <div className={classNames('app', {}, [theme])}>
       <NavBar />
-      <AppRouter />
+      <div className="content-page">
+        <SideBar />
+        <AppRouter />
+      </div>
     </div>
   );
 };

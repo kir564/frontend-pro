@@ -15,4 +15,17 @@ body,
 
   background-color: var(--bg-color);
   color: var(--primary-color);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.content-page {
+  display: flex;
+  flex-grow: 1;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
 }
