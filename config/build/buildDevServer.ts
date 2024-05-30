@@ -8,5 +8,6 @@ export const buildDevServer = (
     port: options.port,
     // static: options.paths.html,
     historyApiFallback: true,
+    hot: true,
   };
 };
