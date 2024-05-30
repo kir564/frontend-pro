@@ -20,6 +20,8 @@ declare module '*.svg' {
   export default SVG;
 }
 
+declare const __IS_DEV__: boolean;
+
 // declare module '*.svg' {
 //   const svg: string;
 //   export default svg;

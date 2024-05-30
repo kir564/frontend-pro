@@ -1,13 +1,10 @@
 import { createContext } from 'react';
 
-export enum Theme {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
+export type AppTheme = 'light' | 'dark';
 
 export interface IThemeContext {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
+  theme: AppTheme;
+  setTheme: (theme: AppTheme) => void;
 }
 
 type ThemeContextType = IThemeContext | null;

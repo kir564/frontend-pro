@@ -3,9 +3,7 @@ import { FC } from 'react';
 import { classNames } from 'shared/lib';
 import cls from './Button.module.scss';
 
-export enum ButtonTheme {
-  CLEAN = 'clean',
-}
+export type ButtonTheme = 'clean';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
