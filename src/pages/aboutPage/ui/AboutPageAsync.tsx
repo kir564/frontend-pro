@@ -8,9 +8,9 @@ export const AboutPageAsync = lazy(
           // @ts-ignore
           import('./AboutPage').then((module) => ({
             default: module.AboutPage,
-          }))
+          })),
         );
       }, 1500);
-    })
+    }),
 );
 // export const AboutPageAsync = lazy(() => import('./AboutPage'));
