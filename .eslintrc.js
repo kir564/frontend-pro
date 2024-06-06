@@ -21,7 +21,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  files: ['*.js'],
+  // files: ['*.{ts, tsx}'],
   plugins: ['react', '@typescript-eslint', 'i18next', 'prettier'],
   rules: {
     'react/jsx-indent': [2, 2],

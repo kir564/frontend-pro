@@ -5,6 +5,7 @@ import { classNames } from 'shared/lib';
 import { AppRouter } from './providers/router/ui/AppRouter';
 import { NavBar } from 'widgets/navBar';
 import { SideBar } from 'widgets/sideBar';
+import { ErrorBoundary } from './providers/errorBoundary';
 
 export const App = () => {
   const { theme } = useThemeContext();
@@ -14,7 +15,9 @@ export const App = () => {
       <NavBar />
       <div className="content-page">
         <SideBar />
-        <AppRouter />
+        <ErrorBoundary>
+          <AppRouter />
+        </ErrorBoundary>
       </div>
     </div>
   );

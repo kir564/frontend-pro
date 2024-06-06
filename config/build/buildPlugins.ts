@@ -1,12 +1,13 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 
 export const buildPlugins = (
-  options: BuildOptions
+  options: BuildOptions,
 ): webpack.WebpackPluginInstance[] => {
   const plugins = [
     new HtmlWebpackPlugin({
@@ -20,11 +21,18 @@ export const buildPlugins = (
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(options.isDev),
     }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }),
   ];
 
   if (options.isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin());
-    plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(
+      new ReactRefreshWebpackPlugin({
+        overlay: false,
+      }),
+    );
   }
 
   return plugins;
