@@ -17,7 +17,7 @@ export const ThemeProvider: FC = ({ children }) => {
       setTheme,
       theme,
     }),
-    [theme]
+    [theme],
   );
 
   return (

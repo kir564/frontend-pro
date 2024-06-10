@@ -3,12 +3,10 @@ import { createContext } from 'react';
 export type AppTheme = 'light' | 'dark';
 
 export interface IThemeContext {
-  theme: AppTheme;
-  setTheme: (theme: AppTheme) => void;
+  theme?: AppTheme;
+  setTheme?: (_: AppTheme) => void;
 }
 
-type ThemeContextType = IThemeContext | null;
-
-export const ThemeContext = createContext<ThemeContextType>(null);
+export const ThemeContext = createContext<IThemeContext>({});
 
 export const LOCAL_STORAGE_THEME_KEY = 'theme';
