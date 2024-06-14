@@ -1,24 +1,24 @@
-import { FC } from "react";
-import { useTranslation } from "react-i18next";
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { classNames } from "shared/lib";
-import cls from "./NavBar.module.scss";
-import { AppLink } from "shared/ui";
+import { classNames } from 'shared/lib';
+import cls from './NavBar.module.scss';
+import { AppLink } from 'shared/ui';
 
-interface NavBar {
+interface NavBarProps {
   className?: string;
 }
 
-export const NavBar: FC<NavBar> = ({ className }) => {
+export const NavBar: FC<NavBarProps> = ({ className }) => {
   const { t } = useTranslation();
   return (
     <div className={classNames(cls.navBar, {}, [className])}>
       <div className={cls.links}>
         <AppLink theme="secondary" to="/" className={cls.mainLink}>
-          {t("nav-main")}
+          {t('nav-main')}
         </AppLink>
         <AppLink theme="secondary" to="/about">
-          {t("nav-about")}
+          {t('nav-about')}
         </AppLink>
       </div>
     </div>
