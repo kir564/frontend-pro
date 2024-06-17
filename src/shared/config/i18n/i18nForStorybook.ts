@@ -9,8 +9,11 @@ i18n
   .use(LanguageDetector)
   .init({
     fallbackLng: 'ru',
-    // lng: 'ru',
+    lng: 'ru',
     debug: true,
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
 
     interpolation: {
       escapeValue: false,
