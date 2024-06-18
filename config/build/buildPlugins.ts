@@ -21,9 +21,6 @@ export const buildPlugins = (
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(options.isDev),
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
   ];
 
   if (options.isDev) {
@@ -31,6 +28,11 @@ export const buildPlugins = (
     plugins.push(
       new ReactRefreshWebpackPlugin({
         overlay: false,
+      }),
+    );
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false,
       }),
     );
   }

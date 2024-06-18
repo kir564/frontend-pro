@@ -2,8 +2,6 @@ import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildCssLoader, buildBabelLoader } from './loaders';
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
 export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
   const typescriptLoader = {
     test: /\.tsx?$/,

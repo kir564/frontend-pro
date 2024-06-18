@@ -1,4 +1,3 @@
-import { BuildOptions } from '../types/config';
 import webpack from 'webpack';
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
