@@ -46,7 +46,10 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': [
       'error',
-      { markupOnly: true, ignoreAttribute: ['theme', 'to'] },
+      {
+        markupOnly: true,
+        ignoreAttribute: ['theme', 'to', 'data-testid', 'size'],
+      },
     ],
   },
   globals: {

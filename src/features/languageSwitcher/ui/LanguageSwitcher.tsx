@@ -7,9 +7,13 @@ import { Button } from 'shared/ui/button/Button';
 
 interface LanguageSwitcherProps {
   className?: string;
+  collapsed?: boolean;
 }
 
-export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ className }) => {
+export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
+  className,
+  collapsed,
+}) => {
   const { t, i18n } = useTranslation();
   const toggleLanguage = async () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
@@ -18,7 +22,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ className }) => {
   return (
     <div className={classNames(cls.languageSwitcher, {}, [className])}>
       <Button className={cls.btnColor} theme="clean" onClick={toggleLanguage}>
-        {t('lang')}
+        {collapsed ? t('short-lang') : t('lang')}
       </Button>
     </div>
   );

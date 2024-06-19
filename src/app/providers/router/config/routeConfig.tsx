@@ -6,15 +6,15 @@ import { AppRoutes, routePath } from 'shared/config/router/routePath';
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
   main: {
-    path: routePath['main'],
+    path: routePath.main,
     element: <MainPage />,
   },
   about: {
-    path: routePath['about'],
+    path: routePath.about,
     element: <AboutPage />,
   },
   not_found: {
-    path: routePath['not_found'],
+    path: routePath.not_found,
     element: <NotFoundPage />,
   },
 };

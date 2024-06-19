@@ -3,23 +3,37 @@ import React, { FC } from 'react';
 import { classNames } from 'shared/lib';
 import cls from './Button.module.scss';
 
-export type ButtonTheme = 'clean' | 'outline';
+export type TButtonTheme =
+  | 'clean'
+  | 'outline'
+  | 'background'
+  | 'backgroundInverted';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export type TButtonSize = 'm' | 'l' | 'xl';
+
+interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  theme?: ButtonTheme;
+  theme?: TButtonTheme;
+  square?: boolean;
+  size?: TButtonSize;
 }
 
-export const Button: FC<ButtonProps> = ({
+export const Button: FC<IButtonProps> = ({
   className,
   children,
   theme,
+  square,
+  size = 'm',
   ...otherProps
 }) => {
   return (
     <button
       {...otherProps}
-      className={classNames(cls.button, {}, [className, cls[theme]])}
+      className={classNames(cls.button, { [cls.square]: square }, [
+        className,
+        cls[theme],
+        cls[size],
+      ])}
     >
       {children}
     </button>

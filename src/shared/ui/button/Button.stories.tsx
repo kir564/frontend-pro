@@ -3,28 +3,23 @@ import { fn } from '@storybook/test';
 import { Button } from './Button';
 import { ThemeDecorator } from 'shared/config/storybook/decorators';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'shared/Button',
   component: Button,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+
   tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {
-    // backgroundColor: { control: 'color' },
-  },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+
+  argTypes: {},
+
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
     children: 'Text',
@@ -44,10 +39,67 @@ export const Outline: Story = {
     theme: 'outline',
   },
 };
+
+export const Outline_l: Story = {
+  args: {
+    children: 'Text',
+    theme: 'outline',
+    size: 'l',
+  },
+};
+
+export const Outline_xl: Story = {
+  args: {
+    children: 'Text',
+    theme: 'outline',
+    size: 'xl',
+  },
+};
+
 export const OutlineDark: Story = {
   args: {
     children: 'Text',
     theme: 'outline',
   },
   decorators: [ThemeDecorator('dark')],
+};
+
+export const Background: Story = {
+  args: {
+    children: 'Text',
+    theme: 'background',
+  },
+};
+export const BackgroundInverted: Story = {
+  args: {
+    children: 'Text',
+    theme: 'backgroundInverted',
+  },
+};
+
+export const Square: Story = {
+  args: {
+    children: '<',
+    square: true,
+    size: 'm',
+    theme: 'background',
+  },
+};
+
+export const Square_l: Story = {
+  args: {
+    children: '<',
+    square: true,
+    size: 'l',
+    theme: 'background',
+  },
+};
+
+export const Square_xl: Story = {
+  args: {
+    children: '<',
+    square: true,
+    size: 'xl',
+    theme: 'background',
+  },
 };
