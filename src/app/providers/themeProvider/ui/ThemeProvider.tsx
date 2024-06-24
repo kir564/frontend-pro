@@ -9,8 +9,15 @@ import {
 const defaultTheme =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as AppTheme) || 'light';
 
-export const ThemeProvider: FC = ({ children }) => {
-  const [theme, setTheme] = useState<AppTheme>(defaultTheme);
+interface IThemeProvider {
+  initialTheme?: AppTheme;
+}
+
+export const ThemeProvider: FC<IThemeProvider> = ({
+  children,
+  initialTheme,
+}) => {
+  const [theme, setTheme] = useState<AppTheme>(initialTheme || defaultTheme);
 
   const defaultThemeValue = useMemo<IThemeContext>(
     () => ({

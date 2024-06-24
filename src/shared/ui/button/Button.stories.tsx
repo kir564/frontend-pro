@@ -33,6 +33,13 @@ export const Clean: Story = {
   },
 };
 
+export const CleanInverted: Story = {
+  args: {
+    children: 'Text',
+    theme: 'cleanInverted',
+  },
+};
+
 export const Outline: Story = {
   args: {
     children: 'Text',

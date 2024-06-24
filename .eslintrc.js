@@ -22,7 +22,13 @@ module.exports = {
     sourceType: 'module',
   },
   // files: ['*.{ts, tsx}'],
-  plugins: ['react', '@typescript-eslint', 'i18next', 'prettier'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'react-hooks',
+    'i18next',
+    'prettier',
+  ],
   rules: {
     'prettier/prettier': ['warn'],
     'react/jsx-indent': [2, 2],
@@ -51,6 +57,8 @@ module.exports = {
         ignoreAttribute: ['theme', 'to', 'data-testid', 'size'],
       },
     ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
   },
   globals: {
     __IS_DEV__: true,

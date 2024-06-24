@@ -1,5 +1,3 @@
-import './styles/index.scss';
-
 import { useThemeContext } from './providers/themeProvider';
 import { classNames } from 'shared/lib';
 import { AppRouter } from './providers/router/ui/AppRouter';

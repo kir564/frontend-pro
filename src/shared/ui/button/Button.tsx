@@ -5,6 +5,7 @@ import cls from './Button.module.scss';
 
 export type TButtonTheme =
   | 'clean'
+  | 'cleanInverted'
   | 'outline'
   | 'background'
   | 'backgroundInverted';
