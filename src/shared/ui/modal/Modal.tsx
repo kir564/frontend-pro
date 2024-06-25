@@ -48,7 +48,7 @@ export const Modal: FC<ModalProps> = ({
   }, [isOpen, onKeyDown]);
 
   return (
-    <Portal>
+    <Portal container={document.body}>
       <div
         className={classNames(
           cls.modal,

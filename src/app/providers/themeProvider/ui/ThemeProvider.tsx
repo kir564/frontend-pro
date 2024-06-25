@@ -7,7 +7,8 @@ import {
 } from '../lib/ThemeContext';
 
 const defaultTheme =
-  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as AppTheme) || 'light';
+  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as AppTheme) ||
+  'app-light-theme';
 
 interface IThemeProvider {
   initialTheme?: AppTheme;

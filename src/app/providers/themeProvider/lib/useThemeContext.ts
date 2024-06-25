@@ -14,10 +14,13 @@ export const useThemeContext = (): IUseThemeContext => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    const newTheme =
+      theme === 'app-light-theme' ? 'app-dark-theme' : 'app-light-theme';
     setTheme(newTheme);
+
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
+
   return {
     theme,
     toggleTheme,

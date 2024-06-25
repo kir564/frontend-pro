@@ -68,7 +68,7 @@ export const OutlineDark: Story = {
     children: 'Text',
     theme: 'outline',
   },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app-dark-theme')],
 };
 
 export const Background: Story = {

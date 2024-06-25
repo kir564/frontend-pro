@@ -28,7 +28,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [ThemeDecorator('light'), I18nDecorator],
+  decorators: [ThemeDecorator('app-light-theme'), I18nDecorator],
 };
 
 export default preview;
