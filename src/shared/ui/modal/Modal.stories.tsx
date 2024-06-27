@@ -13,6 +13,13 @@ const meta = {
   // tags: ['autodocs'],
 
   argTypes: {},
+  decorators: [
+    (Story) => (
+      <div id="root">
+        <Story />
+      </div>
+    ),
+  ],
 
   // args: { onClick: fn() },
 } satisfies Meta<typeof Modal>;

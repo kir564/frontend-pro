@@ -21,21 +21,28 @@ export const Modal: FC<ModalProps> = ({
   const { theme } = useThemeContext();
 
   const [isMounted, setIsMounted] = useState(false);
-  const [isOpening, setIsOpening] = useState(false);
+  // const [isOpening, setIsOpening] = useState(false);
+  // const timerRef = useRef<number>(null);
 
   useEffect(() => {
     if (isOpen) {
       setIsMounted(true);
-      setTimeout(() => {
-        setIsOpening(true);
-      }, 300);
+
+      // timerRef.current = setIsOpening(true);
+      // setTimeout(() => {
+      //   setIsOpening(true);
+      // }, 300);
     }
+
+    // return () => {
+    //   clearTimeout(timerRef.current);
+    // };
   }, [isOpen]);
 
   const handleModal = useCallback(() => {
     if (onClose) {
       onClose();
-      setIsOpening(false);
+      // setIsOpening(false);
     }
   }, [onClose]);
 
@@ -67,12 +74,12 @@ export const Modal: FC<ModalProps> = ({
   }
 
   return (
-    <Portal container={document.body}>
+    <Portal>
       <div
         className={classNames(
           cls.modal,
           {
-            [cls.opened]: isOpening,
+            [cls.opened]: isOpen,
           },
           [className, theme],
         )}
