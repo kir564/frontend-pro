@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 import { classNames } from 'shared/lib';
 import cls from './Modal.module.scss';
 import { Portal } from '../portal/Portal';
@@ -8,6 +8,7 @@ interface ModalProps {
   className?: string;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 export const Modal: FC<ModalProps> = ({
@@ -15,12 +16,26 @@ export const Modal: FC<ModalProps> = ({
   children,
   isOpen,
   onClose,
+  lazy,
 }) => {
   const { theme } = useThemeContext();
+
+  const [isMounted, setIsMounted] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+      setTimeout(() => {
+        setIsOpening(true);
+      }, 300);
+    }
+  }, [isOpen]);
 
   const handleModal = useCallback(() => {
     if (onClose) {
       onClose();
+      setIsOpening(false);
     }
   }, [onClose]);
 
@@ -47,13 +62,17 @@ export const Modal: FC<ModalProps> = ({
     };
   }, [isOpen, onKeyDown]);
 
+  if (lazy && !isMounted) {
+    return null;
+  }
+
   return (
     <Portal container={document.body}>
       <div
         className={classNames(
           cls.modal,
           {
-            [cls.opened]: isOpen,
+            [cls.opened]: isOpening,
           },
           [className, theme],
         )}
