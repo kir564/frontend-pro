@@ -36,7 +36,7 @@ export const LoginForm = memo(function LoginForm({
     [dispatch],
   );
 
-  const onLoginClick = useCallback(() => {
+  const onLoginSubmit = useCallback(() => {
     dispatch(fetchLoginByUsername({ username, password }));
   }, [dispatch, username, password]);
 
@@ -57,7 +57,7 @@ export const LoginForm = memo(function LoginForm({
         onChange={onChangePassword}
         value={password}
       />
-      <Button onClick={onLoginClick} disabled={isLoading}>
+      <Button onClick={onLoginSubmit} disabled={isLoading}>
         {t('log-in')}
       </Button>
     </div>
