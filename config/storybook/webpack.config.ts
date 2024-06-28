@@ -11,7 +11,11 @@ export default ({ config }: { config: webpack.Configuration }) => {
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
 
-  config.resolve?.modules?.push(paths.src);
+  // config.resolve?.modules?.push(paths.src);
+  config.resolve?.modules?.push(
+    path.relative(__dirname, paths.src),
+    'node_modules',
+  );
   config.resolve?.extensions?.push('.ts', '.tsx');
 
   if (config.module && config.module.rules) {
@@ -34,6 +38,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
   });
+
+  config.plugins?.push(
+    new webpack.DefinePlugin({
+      __IS_DEV__: true,
+    }),
+  );
 
   return config;
 };

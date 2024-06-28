@@ -25,16 +25,18 @@ export const Button: FC<IButtonProps> = ({
   theme,
   square,
   size = 'm',
+  disabled,
   ...otherProps
 }) => {
   return (
     <button
+      disabled={disabled}
       {...otherProps}
-      className={classNames(cls.button, { [cls.square]: square }, [
-        className,
-        cls[theme],
-        cls[size],
-      ])}
+      className={classNames(
+        cls.button,
+        { [cls.square]: square, [cls.disabled]: disabled },
+        [className, cls[theme], cls[size]],
+      )}
     >
       {children}
     </button>

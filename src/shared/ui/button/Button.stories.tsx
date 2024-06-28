@@ -110,3 +110,10 @@ export const Square_xl: Story = {
     theme: 'background',
   },
 };
+export const Disabled: Story = {
+  args: {
+    children: 'Text',
+    theme: 'outline',
+    disabled: true,
+  },
+};

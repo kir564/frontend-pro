@@ -3,5 +3,6 @@
   "nav-main": "Главная",
   "nav-about": "О нас",
   "short-lang": "en",
-  "log-in": "Войти"
+  "log-in": "Войти",
+  "log-out": "Выйти"
 }
