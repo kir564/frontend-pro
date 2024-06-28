@@ -42,15 +42,15 @@ export const Error: Story = {
     }),
   ],
 };
-export const Loading: Story = {
-  args: {},
-  decorators: [
-    StoreDecorator({
-      loginForm: {
-        isLoading: true,
-        username: '',
-        password: '',
-      },
-    }),
-  ],
-};
+// export const Loading: Story = {
+//   args: {},
+//   decorators: [
+//     StoreDecorator({
+//       loginForm: {
+//         isLoading: true,
+//         username: '',
+//         password: '',
+//       },
+//     }),
+//   ],
+// };
