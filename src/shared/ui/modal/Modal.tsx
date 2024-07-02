@@ -40,6 +40,7 @@ export const Modal: FC<ModalProps> = ({
   }, [isOpen]);
 
   const handleModal = useCallback(() => {
+    console.log('handleModal: ');
     if (onClose) {
       onClose();
       // setIsOpening(false);

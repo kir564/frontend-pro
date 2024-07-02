@@ -20,7 +20,7 @@ export const NavBar: FC<NavBarProps> = ({ className }) => {
   const [isAuthModal, setIsAuthModal] = useState(false);
 
   const closeAuthModal = useCallback(() => {
-    setIsAuthModal(true);
+    setIsAuthModal((prev) => !prev);
   }, []);
 
   const onLogOut = () => {
@@ -48,7 +48,9 @@ export const NavBar: FC<NavBarProps> = ({ className }) => {
 
   return (
     <div className={classNames(cls.navBar, {}, [className])}>
-      <LoginModal isOpen={isAuthModal} onClose={closeAuthModal} lazy />
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={closeAuthModal} lazy />
+      )}
       <div className={cls.links}>
         <Button theme="cleanInverted" onClick={closeAuthModal}>
           {t('log-in')}

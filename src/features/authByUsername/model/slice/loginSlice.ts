@@ -2,14 +2,14 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { LoginSchema } from '../types/LoginSchema';
 import { fetchLoginByUsername } from '../services/fetchLoginByUsername/fetchLoginByUsername';
 
-const initialState: LoginSchema = {
+export const initialState: LoginSchema = {
   username: '',
   password: '',
   isLoading: false,
 };
 
 export const loginSlice = createSlice({
-  name: 'counter',
+  name: 'loginForm',
   initialState,
   reducers: {
     setUsername: (state, action: PayloadAction<string>) => {
