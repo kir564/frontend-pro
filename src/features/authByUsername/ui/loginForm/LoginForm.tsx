@@ -6,10 +6,10 @@ import { Button, Input, Text } from 'shared/ui';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { fetchLoginByUsername } from '../../model/services/fetchLoginByUsername/fetchLoginByUsername';
-import { getLoginUsername } from '../../model/selectors/getLoginUsername';
-import { getLoginPassword } from '../../model/selectors/getLoginPassword';
-import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading';
-import { getLoginError } from '../../model/selectors/getLoginError';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { DynamicModuleLoader } from 'shared/lib';
 
 export interface LoginFormProps {

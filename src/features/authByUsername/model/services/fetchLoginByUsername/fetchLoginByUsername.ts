@@ -29,11 +29,9 @@ export const fetchLoginByUsername = createAsyncThunk<
       throw new Error('нет данных');
     }
 
-    const data = Object.fromEntries(
-      Object.entries(response.data).filter(([key]) => key !== 'password'),
-    );
-    console.log('response.data: ', response.data);
-    console.log('data: ', data);
+    // const data = Object.fromEntries(
+    //   Object.entries(response.data).filter(([key]) => key !== 'password'),
+    // );
 
     localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
     thunkAPI.dispatch(userActions.setAuthUser(response.data));
