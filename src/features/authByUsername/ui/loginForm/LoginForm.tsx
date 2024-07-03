@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames, ReducersList } from 'shared/lib';
 import cls from './LoginForm.module.scss';
 import { Button, Input, Text } from 'shared/ui';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { fetchLoginByUsername } from '../../model/services/fetchLoginByUsername/fetchLoginByUsername';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
@@ -11,6 +11,7 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { DynamicModuleLoader } from 'shared/lib';
+import { useAppDispatch } from 'shared/lib/hooks';
 
 export interface LoginFormProps {
   className?: string;
@@ -26,7 +27,7 @@ export const LoginForm = memo(function LoginForm({
   isOpen,
 }: LoginFormProps) {
   const { t } = useTranslation('login-form');
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
@@ -47,8 +48,8 @@ export const LoginForm = memo(function LoginForm({
     [dispatch],
   );
 
-  const onLoginSubmit = useCallback(() => {
-    dispatch(fetchLoginByUsername({ username, password }));
+  const onLoginSubmit = useCallback(async () => {
+    await dispatch(fetchLoginByUsername({ username, password }));
   }, [dispatch, username, password]);
 
   return (

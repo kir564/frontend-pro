@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { memo } from 'react';
 
 import { classNames } from 'shared/lib';
 import cls from './LanguageSwitcher.module.scss';
@@ -10,10 +10,10 @@ interface LanguageSwitcherProps {
   collapsed?: boolean;
 }
 
-export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
+export const LanguageSwitcher = memo(function LanguageSwitcher({
   className,
   collapsed,
-}) => {
+}: LanguageSwitcherProps) {
   const { t, i18n } = useTranslation();
   const toggleLanguage = async () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
@@ -26,4 +26,4 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
       </Button>
     </div>
   );
-};
+});

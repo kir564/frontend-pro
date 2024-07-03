@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC, memo, ReactNode } from 'react';
 
 import { classNames } from 'shared/lib';
 import cls from './Button.module.scss';
@@ -17,9 +17,10 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: TButtonTheme;
   square?: boolean;
   size?: TButtonSize;
+  children?: ReactNode;
 }
 
-export const Button: FC<IButtonProps> = ({
+export const Button: FC<IButtonProps> = memo(function Button({
   className,
   children,
   theme,
@@ -27,7 +28,7 @@ export const Button: FC<IButtonProps> = ({
   size = 'm',
   disabled,
   ...otherProps
-}) => {
+}: IButtonProps) {
   return (
     <button
       disabled={disabled}
@@ -41,4 +42,4 @@ export const Button: FC<IButtonProps> = ({
       {children}
     </button>
   );
-};
+});
