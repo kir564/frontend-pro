@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { ThunkConfig } from 'app/providers/storeProvider';
 import axios, { AxiosError } from 'axios';
 
 import { IUser, userActions } from 'entities/user';
@@ -17,13 +18,10 @@ interface IError {
 export const fetchLoginByUsername = createAsyncThunk<
   IUser,
   IAuthData,
-  { rejectValue: IError }
+  ThunkConfig<IError>
 >('login/fetchLoginByUsername', async (authData, thunkAPI) => {
   try {
-    const response = await axios.post<IUser>(
-      'http://localhost:8000/login',
-      authData,
-    );
+    const response = await thunkAPI.extra.api.post<IUser>('/login', authData);
 
     if (!response.data) {
       throw new Error('нет данных');
@@ -35,6 +33,8 @@ export const fetchLoginByUsername = createAsyncThunk<
 
     localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
     thunkAPI.dispatch(userActions.setAuthUser(response.data));
+
+    thunkAPI.extra.navigate('/about');
 
     return response.data;
   } catch (error) {

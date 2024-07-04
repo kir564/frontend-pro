@@ -6,10 +6,13 @@ import { counterReducer } from 'entities/counter';
 import { userReducer } from 'entities/user';
 // import { loginReducer } from 'features/authByUsername';
 import { createReducerManager } from './reducerManager';
+import { instanceApi } from 'shared/api/api';
+import { NavigateFunction } from 'react-router-dom';
 
 export const createReduxStore = (
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>,
+  navigate?: NavigateFunction,
 ) => {
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
@@ -20,10 +23,20 @@ export const createReduxStore = (
 
   const reducerManager = createReducerManager(rootReducer);
 
-  const store = configureStore<StateSchema>({
+  const store = configureStore({
     reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState: initialState,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: {
+            api: instanceApi,
+            navigate,
+          },
+        },
+        serializableCheck: false,
+      }),
   });
 
   // @ts-ignore
