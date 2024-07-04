@@ -3,7 +3,7 @@ import { CounterSchema } from '../types/CounterSchema';
 
 describe('counterSlice', () => {
   test('should work with empty state', () => {
-    const state: CounterSchema = undefined;
+    const state: CounterSchema | undefined = undefined;
     expect(counterReducer(state, counterActions.increment())).toEqual({
       value: 1,
     });

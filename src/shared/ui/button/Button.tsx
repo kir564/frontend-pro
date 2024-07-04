@@ -23,7 +23,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: FC<IButtonProps> = memo(function Button({
   className,
   children,
-  theme,
+  theme = 'outline',
   square,
   size = 'm',
   disabled,

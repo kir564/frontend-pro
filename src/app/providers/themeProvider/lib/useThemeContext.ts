@@ -16,13 +16,13 @@ export const useThemeContext = (): IUseThemeContext => {
   const toggleTheme = () => {
     const newTheme =
       theme === 'app-light-theme' ? 'app-dark-theme' : 'app-light-theme';
-    setTheme(newTheme);
+    setTheme?.(newTheme);
 
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 
   return {
-    theme,
+    theme: theme || 'app-light-theme',
     toggleTheme,
   };
 };

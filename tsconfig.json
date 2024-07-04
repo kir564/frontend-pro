@@ -12,7 +12,9 @@
     "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
-    }
+    },
+    "strict": true
+    // "sourceMap": true
   },
   "ts-node": {
     "compilerOptions": {

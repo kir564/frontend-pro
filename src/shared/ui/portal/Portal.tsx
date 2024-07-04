@@ -8,11 +8,13 @@ interface PortalProps {
 }
 
 export const Portal: FC<PortalProps> = ({ children }) => {
-  const ref = useRef();
+  // const ref = useRef() as MutableRefObject<HTMLElement | null>;
+  const ref = useRef<HTMLElement | null>(null);
+
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    ref.current = document.querySelector('#root') || undefined;
+    ref.current = document.querySelector('#root');
     setMounted(true);
   }, []);
 

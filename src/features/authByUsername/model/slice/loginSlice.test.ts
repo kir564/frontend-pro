@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { loginActions, loginReducer } from './loginSlice';
 import { LoginSchema } from '../types/LoginSchema';
 
@@ -21,9 +20,12 @@ describe('loginSlice', () => {
   });
 
   test('should not work with empty state', () => {
-    const state: DeepPartial<LoginSchema> = undefined;
+    const state: DeepPartial<LoginSchema | undefined> = undefined;
     expect(
-      loginReducer(state as LoginSchema, loginActions.setUsername('admin')),
+      loginReducer(
+        state as LoginSchema | undefined,
+        loginActions.setUsername('admin'),
+      ),
     ).not.toEqual({ username: 'admin' });
   });
 });

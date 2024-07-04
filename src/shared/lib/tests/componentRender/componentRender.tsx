@@ -7,7 +7,6 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { render } from '@testing-library/react';
 import { StateSchema, StoreProvider } from 'app/providers/storeProvider';
-import { DeepPartial } from '@reduxjs/toolkit';
 
 interface IOption {
   routes?: string[];
@@ -15,10 +14,10 @@ interface IOption {
 }
 export const componentRender = (component: ReactNode, option: IOption = {}) => {
   return render(
-    <StoreProvider initialState={option.initialState as StateSchema}>
-      <I18nextProvider i18n={i18n}>
-        <MemoryRouter initialEntries={option.routes}>{component}</MemoryRouter>
-      </I18nextProvider>
-    </StoreProvider>,
+    <MemoryRouter initialEntries={option.routes}>
+      <StoreProvider initialState={option.initialState as StateSchema}>
+        <I18nextProvider i18n={i18n}>{component}</I18nextProvider>
+      </StoreProvider>
+    </MemoryRouter>,
   );
 };

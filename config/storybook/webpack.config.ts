@@ -34,7 +34,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   config.module?.rules?.push(buildCssLoader(true));
   config.module?.rules?.push(buildBabelLoader());
-  config.module?.rules?.push({
+  config.module?.rules.push({
     test: /\.svg$/,
     use: ['@svgr/webpack'],
   });

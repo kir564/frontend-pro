@@ -27,3 +27,9 @@ declare const __API__: string;
 //   const svg: string;
 //   export default svg;
 // }
+
+type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;
