@@ -1,9 +1,12 @@
+import React from 'react';
 import type { Preview } from '@storybook/react';
 import {
   ThemeDecorator,
   I18nDecorator,
 } from '../../src/shared/config/storybook/decorators';
 import '../../src/app/styles/index.scss';
+
+import { BrowserRouter } from 'react-router-dom';
 
 const preview: Preview = {
   parameters: {
@@ -28,7 +31,15 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [ThemeDecorator('app-light-theme'), I18nDecorator],
+  decorators: [
+    ThemeDecorator('app-light-theme'),
+    I18nDecorator,
+    (Story) => (
+      <BrowserRouter>
+        <Story />
+      </BrowserRouter>
+    ),
+  ],
 };
 
 export default preview;
