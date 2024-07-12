@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
-import { buildCssLoader, buildBabelLoader } from './loaders';
+import { buildCssLoader, buildBabelLoader, buildFileLoader } from './loaders';
 
 export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
   const typescriptLoader = {
@@ -11,15 +11,7 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
 
   const babelLoader = buildBabelLoader();
 
-  const fileLoader = {
-    test: /\.(png|jpg|gif|woff2|woff)$/,
-    use: [
-      {
-        loader: 'file-loader',
-        options: {},
-      },
-    ],
-  };
+  const fileLoader = buildFileLoader();
 
   const svgLoader = {
     test: /\.svg$/,

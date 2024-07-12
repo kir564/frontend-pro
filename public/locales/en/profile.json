@@ -2,5 +2,12 @@
   "profile": "Profile",
   "edit": "edit",
   "name": "Your name",
-  "lastName": "Your last name"
+  "lastName": "Your last name",
+  "title-err": "Something went wrong!",
+  "text-err": "try update page!",
+  "cancel": "cancel",
+  "save": "save",
+  "age": "Your age",
+  "city": "Your city",
+  "username": "Your username"
 }

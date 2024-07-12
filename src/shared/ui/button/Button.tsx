@@ -7,6 +7,7 @@ export type TButtonTheme =
   | 'clean'
   | 'cleanInverted'
   | 'outline'
+  | 'outline_red'
   | 'background'
   | 'backgroundInverted';
 

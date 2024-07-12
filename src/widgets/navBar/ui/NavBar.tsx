@@ -16,7 +16,7 @@ export const NavBar: FC<NavBarProps> = memo(function NavBar({
   className,
 }: NavBarProps) {
   const { t } = useTranslation();
-  const { authData } = useSelector(getUserAuthData);
+  const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
 
   const [isAuthModal, setIsAuthModal] = useState(false);

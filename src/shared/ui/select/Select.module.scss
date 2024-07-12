@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+}
+
+.label {
+  margin-right: 10px;
+}
+
+.select {
+  flex-grow: 1;
+  padding: 3px 0;
+}
+
+.readonly {
+  opacity: 0.5;
+}
