@@ -8,6 +8,7 @@ import {
   getProfileError,
   getProfileForm,
   getProfileIsLoading,
+  getProfileValidateError,
   getReadOnly,
   profileActions,
   profileReducer,
@@ -18,6 +19,8 @@ import { useSelector } from 'react-redux';
 import { ProfilePageHeader } from './profilePageHeader/ProfilePageHeader';
 import { CurrencyType } from 'entities/currency';
 import { CountryType } from 'entities/country';
+import { Text } from 'shared/ui';
+import { VALIDATE_PROFILE_ERROR } from 'entities/profile/model/services/validateProfileData/validateProfileData';
 
 interface ProfilePageProps {
   className?: string;
@@ -28,7 +31,7 @@ const initialReducers: ReducersList = {
 };
 
 export const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('profile');
 
   const dispatch = useAppDispatch();
 
@@ -36,9 +39,20 @@ export const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
   const isLoading = useSelector(getProfileIsLoading);
   const error = useSelector(getProfileError);
   const readonly = useSelector(getReadOnly);
+  const validateErrors = useSelector(getProfileValidateError);
+
+  const VALIDATE_ERROR_TRANSLATE = {
+    [VALIDATE_PROFILE_ERROR.INCORRECT_AGE]: t('validate-error-age'),
+    [VALIDATE_PROFILE_ERROR.INCORRECT_COUNTRY]: t('validate-error-country'),
+    [VALIDATE_PROFILE_ERROR.INCORRECT_USER_DATA]: t('validate-error-data'),
+    [VALIDATE_PROFILE_ERROR.NO_DATA]: t('validate-error-no-data'),
+    [VALIDATE_PROFILE_ERROR.SERVER_ERROR]: t('validate-error-server'),
+  };
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const onChangeFirstName = useCallback(
@@ -98,6 +112,14 @@ export const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
       <div className={classNames(cls.profilePage, {}, [className])}>
         <ProfilePageHeader />
+        {validateErrors?.length &&
+          validateErrors.map((error) => (
+            <Text
+              key={error}
+              variant={`error`}
+              text={VALIDATE_ERROR_TRANSLATE[error]}
+            />
+          ))}
         <ProfileCard
           data={data}
           isLoading={isLoading}

@@ -9,5 +9,10 @@
   "save": "сохранить",
   "age": "Ваш возраст",
   "city": "Ваш город",
-  "username": "Имя пользователя"
+  "username": "Имя пользователя",
+  "validate-error-age": "Не корректный возраст",
+  "validate-error-country": "Не корректная страна",
+  "validate-error-data": "Не корректный пользователь",
+  "validate-error-no-data": "Нет данных",
+  "validate-error-server": "Ошибка сервера"
 }

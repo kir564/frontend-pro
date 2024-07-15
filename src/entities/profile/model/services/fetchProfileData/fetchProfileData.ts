@@ -16,6 +16,10 @@ export const fetchProfileData = createAsyncThunk<
   try {
     const response = await thunkAPI.extra.api.get<Profile>('/profile');
 
+    if (!response.data) {
+      throw new Error();
+    }
+
     return response.data;
   } catch (error) {
     const e = error as AxiosError;

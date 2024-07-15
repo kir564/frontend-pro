@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { AppLink } from './AppLink';
 import { ThemeDecorator } from 'shared/config/storybook/decorators';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
 const meta = {
   title: 'shared/AppLink',
@@ -14,13 +14,13 @@ const meta = {
     to: '/',
     children: 'Link',
   },
-  decorators: [
-    (Story) => (
-      <BrowserRouter>
-        <Story />
-      </BrowserRouter>
-    ),
-  ],
+  // decorators: [
+  //   (Story) => (
+  //     <BrowserRouter>
+  //       <Story />
+  //     </BrowserRouter>
+  //   ),
+  // ],
 } satisfies Meta<typeof AppLink>;
 
 export default meta;

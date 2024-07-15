@@ -4,7 +4,7 @@ import {
   StoreDecorator,
   ThemeDecorator,
 } from 'shared/config/storybook/decorators';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
 const meta = {
   title: 'widget/NavBar',
@@ -13,13 +13,13 @@ const meta = {
     // layout: 'centered',
   },
   tags: ['autodocs'],
-  decorators: [
-    (Story) => (
-      <BrowserRouter>
-        <Story />
-      </BrowserRouter>
-    ),
-  ],
+  // decorators: [
+  //   (Story) => (
+  //     <BrowserRouter>
+  //       <Story />
+  //     </BrowserRouter>
+  //   ),
+  // ],
 } satisfies Meta<typeof NavBar>;
 
 export default meta;

@@ -1,39 +1,41 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/storeProvider';
-import axios, { AxiosError } from 'axios';
 import { Profile } from '../../types/ProfileSchema';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
 import { profileActions } from '../../slice/profileSlice';
-
-interface IError {
-  message: string;
-  // другие поля ошибки, если есть
-}
+import {
+  VALIDATE_PROFILE_ERROR,
+  validateProfileData,
+} from '../validateProfileData/validateProfileData';
 
 export const fetchUpdateData = createAsyncThunk<
   Profile,
   void,
-  ThunkConfig<IError>
+  ThunkConfig<string[]>
 >('profile/fetchUpdateData', async (_, thunkAPI) => {
-  try {
-    const formData = getProfileForm(thunkAPI.getState());
+  const formData = getProfileForm(thunkAPI.getState());
 
+  const errors = validateProfileData(formData);
+
+  if (errors.length) {
+    return thunkAPI.rejectWithValue(errors);
+  }
+
+  try {
     const response = await thunkAPI.extra.api.put<Profile>('/profile', {
       ...formData,
     });
+
+    if (!response.data) {
+      throw new Error();
+    }
 
     thunkAPI.dispatch(profileActions.setReadOnly(true));
 
     return response.data;
   } catch (error) {
-    const e = error as AxiosError;
+    console.log(error);
 
-    if (axios.isAxiosError(e) && e.response) {
-      return thunkAPI.rejectWithValue(e.response.data);
-    } else {
-      return thunkAPI.rejectWithValue({ message: 'Неизвестная ошибка' });
-    }
-
-    // return thunkAPI.rejectWithValue(e.response.data);
+    return thunkAPI.rejectWithValue([VALIDATE_PROFILE_ERROR.SERVER_ERROR]);
   }
 });

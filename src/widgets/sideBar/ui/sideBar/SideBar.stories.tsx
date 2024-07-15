@@ -1,7 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { SideBar } from './SideBar';
-import { ThemeDecorator } from 'shared/config/storybook/decorators';
-import { BrowserRouter } from 'react-router-dom';
+import {
+  StoreDecorator,
+  ThemeDecorator,
+} from 'shared/config/storybook/decorators';
+// import { BrowserRouter } from 'react-router-dom';
 
 const meta = {
   title: 'widget/SideBar',
@@ -10,13 +13,7 @@ const meta = {
     // layout: 'centered',
   },
   tags: ['autodocs'],
-  decorators: [
-    (Story) => (
-      <BrowserRouter>
-        <Story />
-      </BrowserRouter>
-    ),
-  ],
+  decorators: [],
 } satisfies Meta<typeof SideBar>;
 
 export default meta;
@@ -24,8 +21,20 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: {},
+  decorators: [StoreDecorator()],
 };
 export const Dark: Story = {
   args: {},
-  decorators: [ThemeDecorator('app-dark-theme')],
+  decorators: [ThemeDecorator('app-dark-theme'), StoreDecorator()],
+};
+export const LightAuth: Story = {
+  args: {},
+  decorators: [StoreDecorator({ user: { authData: {} } })],
+};
+export const DarkAuth: Story = {
+  args: {},
+  decorators: [
+    ThemeDecorator('app-dark-theme'),
+    StoreDecorator({ user: { authData: {} } }),
+  ],
 };

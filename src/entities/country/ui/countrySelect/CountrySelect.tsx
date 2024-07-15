@@ -15,9 +15,9 @@ interface CountryTypeProps {
 }
 
 const optionCurrency: SelectOptions<CountryType>[] = [
+  { value: 'Russia', content: 'Russia' },
   { value: 'Belarus', content: 'Belarus' },
   { value: 'Kazakhstan', content: 'Kazakhstan' },
-  { value: 'Russia', content: 'Russia' },
 ];
 
 export const CountrySelect: FC<CountryTypeProps> = ({

@@ -4,9 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib';
 import cls from './ProfileCard.module.scss';
 
-import { Avatar, Input, Loader, Select, Text } from 'shared/ui';
+import { Avatar, Input, Loader, Text } from 'shared/ui';
 import { Profile } from '../../model/types/ProfileSchema';
-import { SelectOptions } from 'shared/ui/select/Select';
 import { CurrencySelect, CurrencyType } from 'entities/currency';
 import { CountrySelect, CountryType } from 'entities/country';
 

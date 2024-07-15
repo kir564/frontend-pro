@@ -5,13 +5,7 @@ import { classNames } from 'shared/lib';
 import cls from './ProfilePageHeader.module.scss';
 import { Button, Text } from 'shared/ui';
 import { useSelector } from 'react-redux';
-import {
-  fetchUpdateData,
-  getProfileForm,
-  getReadOnly,
-  Profile,
-  profileActions,
-} from 'entities/profile';
+import { fetchUpdateData, getReadOnly, profileActions } from 'entities/profile';
 import { useAppDispatch } from 'shared/lib/hooks';
 
 interface ProfilePageHeaderProps {

@@ -9,5 +9,10 @@
   "save": "save",
   "age": "Your age",
   "city": "Your city",
-  "username": "Your username"
+  "username": "Your username",
+  "validate-error-age": "Incorrect age",
+  "validate-error-country": "Incorrect country",
+  "validate-error-data": "Incorrect user",
+  "validate-error-no-data": "No data",
+  "validate-error-server": "Server error"
 }
