@@ -1,6 +1,9 @@
 import { createContext } from 'react';
 
-export type AppTheme = 'app-light-theme' | 'app-dark-theme';
+export type AppTheme =
+  | 'app-light-theme'
+  | 'app-dark-theme'
+  | 'app-orange-theme';
 
 export interface IThemeContext {
   theme?: AppTheme;
