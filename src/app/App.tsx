@@ -4,13 +4,14 @@ import { AppRouter } from './providers/router/ui/AppRouter';
 import { NavBar } from 'widgets/navBar';
 import { SideBar } from 'widgets/sideBar';
 import { ErrorBoundary } from './providers/errorBoundary';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { userActions } from 'entities/user';
+import { getUserInitAuth, userActions } from 'entities/user';
 
 export const App = () => {
   const { theme } = useThemeContext();
   const dispatch = useDispatch();
+  const init = useSelector(getUserInitAuth);
 
   useEffect(() => {
     dispatch(userActions.initAuthUser());
@@ -21,9 +22,7 @@ export const App = () => {
       <NavBar />
       <div className="content-page">
         <SideBar />
-        <ErrorBoundary>
-          <AppRouter />
-        </ErrorBoundary>
+        <ErrorBoundary>{init && <AppRouter />}</ErrorBoundary>
       </div>
     </div>
   );
