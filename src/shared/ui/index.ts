@@ -7,3 +7,6 @@ export { Input } from './input/Input';
 export { Text } from './text/Text';
 export { Avatar } from './avatar/Avatar';
 export { Select } from './select/Select';
+export { Skeleton } from './skeleton/Skeleton';
+export { Icon } from './icon/Icon';
+export { Code } from './code/Code';

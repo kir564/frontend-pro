@@ -7,12 +7,15 @@ type VariantText = 'primary' | 'error';
 
 type AlignText = 'left' | 'right' | 'center';
 
+type SizeText = 'm' | 'l';
+
 interface TextProps {
   className?: string;
   title?: string;
   text?: string;
   variant?: VariantText;
   align?: AlignText;
+  size?: SizeText;
 }
 
 export const Text: FC<TextProps> = ({
@@ -21,6 +24,7 @@ export const Text: FC<TextProps> = ({
   title,
   variant = 'primary',
   align = 'left',
+  size = 'm',
 }) => {
   return (
     <div
@@ -28,6 +32,7 @@ export const Text: FC<TextProps> = ({
         className,
         cls[variant],
         cls[align],
+        cls[size],
       ])}
     >
       {title && <p className={cls.title}>{title}</p>}

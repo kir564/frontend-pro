@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Preview } from '@storybook/react';
 import {
   ThemeDecorator,
@@ -6,7 +5,14 @@ import {
 } from '../../src/shared/config/storybook/decorators';
 import '../../src/app/styles/index.scss';
 
-import { BrowserRouter } from 'react-router-dom';
+// import React from 'react';
+
+// import { BrowserRouter } from 'react-router-dom';
+
+import {
+  reactRouterParameters,
+  withRouter,
+} from 'storybook-addon-remix-react-router';
 
 const preview: Preview = {
   parameters: {
@@ -16,6 +22,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    reactRouter: reactRouterParameters({}),
   },
   globalTypes: {
     locale: {
@@ -34,11 +41,12 @@ const preview: Preview = {
   decorators: [
     ThemeDecorator('app-light-theme'),
     I18nDecorator,
-    (Story) => (
-      <BrowserRouter>
-        <Story />
-      </BrowserRouter>
-    ),
+    // (Story) => (
+    //   <BrowserRouter>
+    //     <Story />
+    //   </BrowserRouter>
+    // ),
+    withRouter,
   ],
 };
 

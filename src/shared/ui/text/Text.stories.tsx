@@ -23,6 +23,13 @@ export const Primary: Story = {
     text: 'Description text',
   },
 };
+export const PrimarySizeL: Story = {
+  args: {
+    title: 'Title article',
+    text: 'Description text',
+    size: 'l',
+  },
+};
 export const OnlyTitle: Story = {
   args: {
     title: 'Title article',

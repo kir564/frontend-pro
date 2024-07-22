@@ -83,6 +83,7 @@
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "storybook": "^8.1.6",
+    "storybook-addon-remix-react-router": "^3.0.0",
     "style-loader": "^3.3.1",
     "stylelint": "^14.5.3",
     "stylelint-config-prettier": "^9.0.5",
