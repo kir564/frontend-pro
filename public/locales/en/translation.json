@@ -7,5 +7,7 @@
   "log-out": "Log out",
   "nav-profile": "Profile",
   "nav-articles": "Articles",
-  "no-com": "There are no comments"
+  "no-com": "There are no comments",
+  "new-comment": "enter the comment text",
+  "send-new-comment": "send"
 }

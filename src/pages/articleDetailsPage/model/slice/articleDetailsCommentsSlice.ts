@@ -6,7 +6,7 @@ import {
 import { StateSchema } from 'app/providers/storeProvider';
 import { Comment } from 'entities/comment';
 import { ArticleDetailsCommentsSchema } from '../types/articleDetailsCommentsSchema';
-import { fetchCommentsByArticleId } from '../services/fetchCommenByArticleId/fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 const commentsAdapter = createEntityAdapter<Comment>({
   selectId: (comment: Comment) => comment.id,

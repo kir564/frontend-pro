@@ -12,7 +12,7 @@ export const fetchUpdateData = createAsyncThunk<
   Profile,
   void,
   ThunkConfig<string[]>
->('profile/fetchUpdateData', async (_, thunkAPI) => {
+>('profile/fetchUpdateData', async (profileId, thunkAPI) => {
   const formData = getProfileForm(thunkAPI.getState());
 
   const errors = validateProfileData(formData);
@@ -22,9 +22,12 @@ export const fetchUpdateData = createAsyncThunk<
   }
 
   try {
-    const response = await thunkAPI.extra.api.put<Profile>('/profile', {
-      ...formData,
-    });
+    const response = await thunkAPI.extra.api.put<Profile>(
+      `/profile/${formData?.id}`,
+      {
+        ...formData,
+      },
+    );
 
     if (!response.data) {
       throw new Error();

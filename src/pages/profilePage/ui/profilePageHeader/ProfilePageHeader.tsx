@@ -5,8 +5,14 @@ import { classNames } from 'shared/lib';
 import cls from './ProfilePageHeader.module.scss';
 import { Button, Text } from 'shared/ui';
 import { useSelector } from 'react-redux';
-import { fetchUpdateData, getReadOnly, profileActions } from 'entities/profile';
+import {
+  fetchUpdateData,
+  getProfileData,
+  getReadOnly,
+  profileActions,
+} from 'entities/profile';
 import { useAppDispatch } from 'shared/lib/hooks';
+import { getUserAuthData } from 'entities/user';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -20,6 +26,10 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
   // const formData = useSelector(getProfileForm);
 
   const readonly = useSelector(getReadOnly);
+  const user = useSelector(getUserAuthData);
+  const profile = useSelector(getProfileData);
+
+  const isCurrentUserProfile = user?.id === profile?.id;
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadOnly(false));
@@ -30,8 +40,18 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({
   }, [dispatch]);
 
   const onSave = useCallback(() => {
-    dispatch(fetchUpdateData());
-  }, [dispatch]);
+    if (profile?.id) {
+      dispatch(fetchUpdateData());
+    }
+  }, [dispatch, profile?.id]);
+
+  if (!isCurrentUserProfile) {
+    return (
+      <div className={classNames(cls.profilePageHeader, {}, [className])}>
+        <Text title={t('profile')} />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(cls.profilePageHeader, {}, [className])}>

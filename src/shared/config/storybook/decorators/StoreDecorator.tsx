@@ -1,7 +1,9 @@
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import type { Decorator } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/storeProvider';
-import { articleDetailsReducer } from 'entities/article/model/slice/articleDetailsSlice';
+import { articleDetailsReducer } from 'entities/article';
+import { addCommentFormReducer } from 'features/addCommentForm';
+import { articleDetailsCommentsReducer } from 'pages/articleDetailsPage';
 import { ReducersList } from 'shared/lib/components/dynamicModuleLoader/DynamicModuleLoader';
 // import { loginReducer } from 'features/authByUsername/model/slice/loginSlice';
 
@@ -11,6 +13,8 @@ import { ReducersList } from 'shared/lib/components/dynamicModuleLoader/DynamicM
 
 const defaultAsyncReducers: ReducersList = {
   articleDetails: articleDetailsReducer,
+  addCommentForm: addCommentFormReducer,
+  articleDetailsComments: articleDetailsCommentsReducer,
 };
 
 export const StoreDecorator = (
