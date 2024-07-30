@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 
-export const ArticlePageAsync = lazy(
+export const ArticlesPageAsync = lazy(
   () =>
     new Promise((resolve) => {
       setTimeout(() => {
@@ -10,6 +10,6 @@ export const ArticlePageAsync = lazy(
             default: module.ArticlesPage,
           })),
         );
-      }, 1500);
+      }, 400);
     }),
 );
