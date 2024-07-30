@@ -1,5 +1,7 @@
 {
   "articl-nf": "Article not found!",
   "err": "Error arlicle loading!",
-  "comments": "Comments"
+  "comments": "Comments",
+  "read-more": "read more",
+  "back": "back to list"
 }

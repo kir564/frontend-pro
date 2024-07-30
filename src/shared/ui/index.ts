@@ -10,3 +10,4 @@ export { Select } from './select/Select';
 export { Skeleton } from './skeleton/Skeleton';
 export { Icon } from './icon/Icon';
 export { Code } from './code/Code';
+export { Card } from './card/Card';

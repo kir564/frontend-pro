@@ -1,40 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { ArticleDetailsPage } from './ArticleDetailsPage';
+import { Article } from '../model/types/article';
+import avatar from 'shared/assets/tests/avatar.jpg';
 
-import { StoreDecorator } from 'shared/config/storybook/decorators';
-import { Article } from 'entities/article/model/types/article';
-
-import { reactRouterParameters } from 'storybook-addon-remix-react-router';
-
-const meta = {
-  title: 'pages/ArticleDetailsPage',
-  component: ArticleDetailsPage,
-  parameters: {
-    layout: 'centered',
-    reactRouter: reactRouterParameters({
-      location: {
-        pathParams: { id: '1' },
-      },
-      routing: {
-        path: '/articles/:id',
-      },
-    }),
-  },
-  tags: ['autodocs'],
-
-  argTypes: {},
-} satisfies Meta<typeof ArticleDetailsPage>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-const article: Article = {
+export const article: Article = {
   id: '1',
-  title: 'Javascript news',
   user: {
     id: '1',
     username: 'admin',
+    avatar,
   },
+  title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
@@ -99,38 +73,5 @@ const article: Article = {
         'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
       ],
     },
-  ],
-};
-
-export const Primary: Story = {
-  args: {},
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        data: article,
-      },
-    }),
-  ],
-  parameters: {},
-};
-
-export const Loading: Story = {
-  args: {},
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        isLoading: true,
-      },
-    }),
-  ],
-};
-export const Error: Story = {
-  args: {},
-  decorators: [
-    StoreDecorator({
-      articleDetails: {
-        error: 'error',
-      },
-    }),
   ],
 };

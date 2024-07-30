@@ -1,0 +1,31 @@
+.types {
+  margin: 8px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.username {
+  margin-left: 8px;
+}
+
+.date {
+  margin-left: auto;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer {
+  margin-top: 16px;
+}
