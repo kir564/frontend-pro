@@ -22,19 +22,13 @@ export const ArticleList = memo(function ArticleList({
 }: ArticleListProps) {
   const { t } = useTranslation();
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
-        {new Array(view === 'small' ? 9 : 3).fill(0).map((_, index) => (
-          <ArticleListItemSkeleton
-            key={index}
-            view={view}
-            className={cls.card}
-          />
-        ))}
-      </div>
-    );
-  }
+  const getSkeletons = (view: ArticleView) => (
+    <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
+      {new Array(view === 'small' ? 9 : 3).fill(0).map((_, index) => (
+        <ArticleListItemSkeleton key={index} view={view} className={cls.card} />
+      ))}
+    </div>
+  );
 
   const renderArticle = (article: Article) => {
     return (
@@ -51,6 +45,7 @@ export const ArticleList = memo(function ArticleList({
   return (
     <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
       {articles.length ? articles.map(renderArticle) : null}
+      {isLoading && getSkeletons(view)}
     </div>
   );
 });

@@ -18,6 +18,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { routePath } from 'shared/config/router/routePath';
 // import { getArticleDetailsError } from 'entities/article';
+import { Page } from 'shared/ui/page/Page';
 
 interface articleDetailsPageProps {
   className?: string;
@@ -57,15 +58,15 @@ export const ArticleDetailsPage = memo(function ArticleDetailsPage({
 
   if (!id) {
     return (
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         {t('articl-nf')}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         <Button
           className={cls.backBtn}
           onClick={onBackToList}
@@ -74,7 +75,7 @@ export const ArticleDetailsPage = memo(function ArticleDetailsPage({
         <Text title={t('comments')} className={cls.commentsTitle} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={isLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 });

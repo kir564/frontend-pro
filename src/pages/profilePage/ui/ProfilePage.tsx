@@ -9,6 +9,7 @@ import { ProfilePageHeader } from './profilePageHeader/ProfilePageHeader';
 import { EditableProfileCard } from 'widgets/editableProfileCard';
 import { ProfileErrorsValidate } from './profileErrorsValidate/ProfileErrorsValidate';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/page/Page';
 
 interface ProfilePageProps {
   className?: string;
@@ -32,11 +33,11 @@ export const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-      <div className={classNames(cls.profilePage, {}, [className])}>
+      <Page className={classNames(cls.profilePage, {}, [className])}>
         <ProfilePageHeader />
         <ProfileErrorsValidate />
         <EditableProfileCard />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

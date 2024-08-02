@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { FC } from 'react';
 
 import { classNames } from 'shared/lib';
+import { Page } from 'shared/ui/page/Page';
 
 interface AboutPageProps {
   className?: string;
@@ -11,6 +12,6 @@ interface AboutPageProps {
 export const AboutPage: FC<AboutPageProps> = ({ className }) => {
   const { t } = useTranslation('about');
   return (
-    <div className={classNames('', {}, [className])}>{t('about-page')}</div>
+    <Page className={classNames('', {}, [className])}>{t('about-page')}</Page>
   );
 };

@@ -16,11 +16,16 @@ import {
 import { useSelector } from 'react-redux';
 import {
   getArticlesPageError,
+  getArticlesPageHasMore,
   getArticlesPageIsLoading,
+  getArticlesPageNum,
   getArticlesPageView,
 } from '../model/selectors/articlePageSelectors';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList';
+
+import { Page } from 'shared/ui/page/Page';
+import { fetchNextArticlePage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
 
 interface ArticlesPageProps {
   className?: string;
@@ -36,15 +41,21 @@ export const ArticlesPage = memo(function ArticlesPage({
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
-  const view = useSelector(getArticlesPageView) || 'small';
+  const view = useSelector(getArticlesPageView);
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);
   const error = useSelector(getArticlesPageError);
+  const page = useSelector(getArticlesPageNum);
+  const hasMore = useSelector(getArticlesPageHasMore);
 
   useInitialEffect(() => {
-    dispatch(fetchArticlesList());
     dispatch(articlesPageAction.initView());
+    dispatch(fetchArticlesList({ page }));
   });
+
+  const onLoadNextPath = useCallback(() => {
+    dispatch(fetchNextArticlePage());
+  }, [dispatch]);
 
   const onChangeView = useCallback(
     (view: ArticleView) => {
@@ -55,10 +66,13 @@ export const ArticlesPage = memo(function ArticlesPage({
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <ArticleViewSelector view={view} onViewClick={onChangeView} />
-      <div className={classNames(cls.articlesPage, {}, [className])}>
+      <Page
+        onScrollEnd={onLoadNextPath}
+        className={classNames(cls.articlesPage, {}, [className])}
+      >
+        <ArticleViewSelector view={view} onViewClick={onChangeView} />
         <ArticleList view={view} isLoading={isLoading} articles={articles} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 });
