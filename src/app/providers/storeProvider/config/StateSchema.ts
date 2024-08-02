@@ -14,7 +14,6 @@ import { AddCommentFormSchema } from 'features/addCommentForm';
 import { LoginSchema } from 'features/authByUsername';
 import { ArticleDetailsCommentsSchema } from 'pages/articleDetailsPage';
 import { ArticlesPageSchema } from 'pages/articlesPage/model/types/ArticlesPageSchema';
-import { NavigateFunction } from 'react-router-dom';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -44,7 +43,6 @@ export interface IReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
   api: AxiosInstance;
-  navigate?: NavigateFunction;
 }
 
 export interface ThunkConfig<T> {

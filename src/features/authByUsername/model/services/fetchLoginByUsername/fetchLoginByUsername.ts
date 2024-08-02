@@ -34,8 +34,6 @@ export const fetchLoginByUsername = createAsyncThunk<
     localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
     thunkAPI.dispatch(userActions.setAuthUser(response.data));
 
-    thunkAPI.extra.navigate?.('/about');
-
     return response.data;
   } catch (error) {
     const e = error as AxiosError;
