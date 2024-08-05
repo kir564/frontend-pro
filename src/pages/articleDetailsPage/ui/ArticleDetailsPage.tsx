@@ -18,7 +18,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { routePath } from 'shared/config/router/routePath';
 // import { getArticleDetailsError } from 'entities/article';
-import { Page } from 'shared/ui/page/Page';
+import { Page } from 'widgets/page/Page';
 
 interface articleDetailsPageProps {
   className?: string;

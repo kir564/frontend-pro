@@ -9,7 +9,7 @@ import { ProfilePageHeader } from './profilePageHeader/ProfilePageHeader';
 import { EditableProfileCard } from 'widgets/editableProfileCard';
 import { ProfileErrorsValidate } from './profileErrorsValidate/ProfileErrorsValidate';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/ui/page/Page';
+import { Page } from 'widgets/page/Page';
 
 interface ProfilePageProps {
   className?: string;

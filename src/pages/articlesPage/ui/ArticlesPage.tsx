@@ -20,7 +20,7 @@ import {
 } from '../model/selectors/articlePageSelectors';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 
-import { Page } from 'shared/ui/page/Page';
+import { Page } from 'widgets/page/Page';
 import { fetchNextArticlePage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlePage } from '../model/services/initArticlePage/initArticlePage';
 
