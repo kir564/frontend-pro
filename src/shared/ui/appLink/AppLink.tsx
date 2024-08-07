@@ -17,11 +17,13 @@ export const AppLink = memo(function AppLink({
   to,
   children,
   theme = 'primary',
+  ...otherProps
 }: AppLinkProps) {
   return (
     <Link
       to={to}
       className={classNames(cls.appLink, {}, [className, cls[theme]])}
+      {...otherProps}
     >
       {children}
     </Link>

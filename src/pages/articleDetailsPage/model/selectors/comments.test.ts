@@ -3,13 +3,14 @@ import {
   getArticleDetailsCommentsIsLoading,
   getArticleDetailsCommentsError,
 } from './comments';
-import { getArticleComments } from '../slice/articleDetailsCommentsSlice';
 
 describe('comments', () => {
   test('should return isLoading', () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetailsComments: {
-        isLoading: true,
+      articleDetailsPage: {
+        comments: {
+          isLoading: true,
+        },
       },
     };
 
@@ -19,8 +20,10 @@ describe('comments', () => {
   });
   test('should return error', () => {
     const state: DeepPartial<StateSchema> = {
-      articleDetailsComments: {
-        error: 'error',
+      articleDetailsPage: {
+        comments: {
+          error: 'error',
+        },
       },
     };
 
