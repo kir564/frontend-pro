@@ -29,7 +29,7 @@ export type ArticleBlock =
   | ArticleImageBlock
   | ArticleTextBlock;
 
-export type ArticleType = 'IT' | 'SCIENCE' | 'ECONOMICS';
+export type ArticleType = 'IT' | 'SCIENCE' | 'ECONOMICS' | 'ALL';
 
 export interface Article {
   id: string;
@@ -44,3 +44,5 @@ export interface Article {
 }
 
 export type ArticleView = 'small' | 'big';
+
+export type ArticleSortField = 'view' | 'createdAt' | 'title';

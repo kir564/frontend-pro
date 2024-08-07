@@ -1,10 +1,7 @@
 .small {
   display: flex;
   flex-wrap: wrap;
-
-  .card {
-    margin: 0 30px 30px 0;
-  }
+  gap: 30px;
 }
 
 .big {

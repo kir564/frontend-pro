@@ -6,6 +6,7 @@ import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItemSkeleton/ArticleListItemSkeleton';
+import { Text } from 'shared/ui';
 
 interface ArticleListProps {
   className?: string;
@@ -20,7 +21,7 @@ export const ArticleList = memo(function ArticleList({
   isLoading,
   view = 'small',
 }: ArticleListProps) {
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
 
   const getSkeletons = (view: ArticleView) => (
     <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
@@ -41,6 +42,14 @@ export const ArticleList = memo(function ArticleList({
       />
     );
   };
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
+        <Text text={t('articles-nf')} size="l" />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(cls.articleList, {}, [className, cls[view]])}>

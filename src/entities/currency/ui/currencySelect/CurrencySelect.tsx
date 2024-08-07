@@ -14,7 +14,7 @@ interface CurrencySelectProps {
   value?: CurrencyType;
 }
 
-const optionCurrency: SelectOptions<CurrencyType>[] = [
+const optionCurrency: SelectOptions<CurrencyType, any>[] = [
   { value: 'RUB', content: 'RUB' },
   { value: 'EUR', content: 'EUR' },
   { value: 'USD', content: 'USD' },

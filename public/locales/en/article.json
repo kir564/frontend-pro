@@ -3,5 +3,17 @@
   "err": "Error arlicle loading!",
   "comments": "Comments",
   "read-more": "read more",
-  "back": "back to list"
+  "back": "back to list",
+  "sort-by": "Sort by",
+  "by": "By",
+  "descending": "descending",
+  "ascending": "ascending",
+  "created": "created",
+  "title": "title",
+  "views": "views",
+  "ec": "Economics",
+  "it": "IT",
+  "sc": "Science",
+  "all": "All",
+  "articles-nf": "Articles Not Found!"
 }

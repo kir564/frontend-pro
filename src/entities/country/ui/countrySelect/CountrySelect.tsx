@@ -14,7 +14,7 @@ interface CountryTypeProps {
   value?: CountryType;
 }
 
-const optionCurrency: SelectOptions<CountryType>[] = [
+const optionCurrency: SelectOptions<CountryType, any>[] = [
   { value: 'Russia', content: 'Russia' },
   { value: 'Belarus', content: 'Belarus' },
   { value: 'Kazakhstan', content: 'Kazakhstan' },
