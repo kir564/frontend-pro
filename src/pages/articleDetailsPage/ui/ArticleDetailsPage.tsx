@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { classNames, DynamicModuleLoader, ReducersList } from 'shared/lib';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetails, ArticleList } from 'entities/article';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Button, Text } from 'shared/ui';
+import { useParams } from 'react-router-dom';
+
 import { CommentList } from 'entities/comment';
 
 import { useSelector } from 'react-redux';
@@ -15,13 +15,14 @@ import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { AddCommentForm } from 'features/addCommentForm';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
-import { routePath } from 'shared/config/router/routePath';
 // import { getArticleDetailsError } from 'entities/article';
 import { Page } from 'widgets/page/Page';
 import { getArticleRecommendations } from '../model/slice/articleDetailsPageRecommendationsSlice';
 import { getArticleRecommendationsIsLoading } from '../model/selectors/recommendations';
 import { fetchArticleRecommendations } from '../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../model/slice';
+import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { Text } from 'shared/ui';
 
 interface articleDetailsPageProps {
   className?: string;
@@ -44,7 +45,6 @@ export const ArticleDetailsPage = memo(function ArticleDetailsPage({
   );
   // const errorArticleDetails = useSelector(getArticleDetailsError);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   // const text = useSelector(getCommentFormText);
 
@@ -60,10 +60,6 @@ export const ArticleDetailsPage = memo(function ArticleDetailsPage({
     [dispatch],
   );
 
-  const onBackToList = useCallback(() => {
-    navigate(routePath.articles);
-  }, [navigate]);
-
   if (!id) {
     return (
       <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
@@ -75,10 +71,7 @@ export const ArticleDetailsPage = memo(function ArticleDetailsPage({
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-        <Button
-          className={cls.backBtn}
-          onClick={onBackToList}
-        >{`<< ${t('back')}`}</Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text title={t('recommendations')} className={cls.commentsTitle} />
         <ArticleList

@@ -9,5 +9,7 @@
   "nav-articles": "Articles",
   "no-com": "There are no comments",
   "new-comment": "enter the comment text",
-  "send-new-comment": "send"
+  "send-new-comment": "send",
+  "logo": "LOGO",
+  "create-article": "Create article"
 }
