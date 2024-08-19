@@ -6,6 +6,7 @@ import cls from './CurrencySelect.module.scss';
 import { Select } from 'shared/ui';
 import { SelectOptions } from 'shared/ui/select/Select';
 import { CurrencyType } from 'entities/currency/model/types/currency';
+import { Listbox } from 'shared/ui/ListBox/ListBox';
 
 interface CurrencySelectProps {
   className?: string;
@@ -33,12 +34,21 @@ export const CurrencySelect: FC<CurrencySelectProps> = ({
   };
 
   return (
-    <Select
+    <Listbox
+      // direction={`top`}
       readonly={readonly}
       className={classNames(cls.currencySelect, {}, [className])}
-      options={optionCurrency}
+      items={optionCurrency}
       value={value}
       onChange={onChangeHandler}
+      label={`Укажите валюту`}
     />
+    // <Select
+    //   readonly={readonly}
+    //   className={classNames(cls.currencySelect, {}, [className])}
+    //   options={optionCurrency}
+    //   value={value}
+    //   onChange={onChangeHandler}
+    // />
   );
 };

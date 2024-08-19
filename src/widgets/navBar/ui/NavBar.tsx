@@ -3,12 +3,13 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib';
 import cls from './NavBar.module.scss';
-import { AppLink, Button, Text } from 'shared/ui';
+import { AppLink, Avatar, Button, Text } from 'shared/ui';
 import { LoginModal } from 'features/authByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/user';
 import { routeConfig } from 'app/providers/router/config/routeConfig';
 import { routePath } from 'shared/config/router/routePath';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 
 interface NavBarProps {
   className?: string;
@@ -46,9 +47,20 @@ export const NavBar: FC<NavBarProps> = memo(function NavBar({
           {t('create-article')}
         </AppLink>
         <div className={cls.links}>
-          <Button theme="cleanInverted" onClick={onLogOut}>
-            {t('log-out')}
-          </Button>
+          <Dropdown
+            direction={`bottomRight`}
+            trigger={<Avatar src={authData.avatar} size={30} />}
+            items={[
+              {
+                content: t('profile'),
+                href: `${routePath.profile}/${authData.id}`,
+              },
+              {
+                content: t('log-out'),
+                onClick: onLogOut,
+              },
+            ]}
+          />
         </div>
       </header>
     );

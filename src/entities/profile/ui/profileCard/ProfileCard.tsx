@@ -8,6 +8,7 @@ import { Avatar, Input, Loader, Text } from 'shared/ui';
 import { Profile } from '../../model/types/ProfileSchema';
 import { CurrencySelect, CurrencyType } from 'entities/currency';
 import { CountrySelect, CountryType } from 'entities/country';
+import { Listbox } from 'shared/ui/ListBox/ListBox';
 
 interface ProfileCardProps {
   className?: string;

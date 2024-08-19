@@ -5,6 +5,8 @@ import { classNames } from 'shared/lib';
 import cls from './MainPage.module.scss';
 import { Button } from 'shared/ui';
 import { Page } from 'widgets/page/Page';
+import { Listbox } from 'shared/ui/ListBox/ListBox';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 
 interface MainPageProps {
   className?: string;
@@ -29,7 +31,28 @@ export const MainPage: FC<MainPageProps> = ({ className }) => {
     <Page className={classNames(cls.mainPage, {}, [className])}>
       {t('main-page')}
       <p>{t('new-key')}</p>
+      <Listbox
+        defaultValue={`Выберите значение`}
+        onChange={() => {}}
+        value={undefined}
+        items={[
+          { value: '1', content: 'content-1 content-1 content-1 content-1' },
+          { value: '2', content: 'content-2', disabled: true },
+          { value: '3', content: 'content-3' },
+        ]}
+      />
+      <div>123</div>
+      <div>123</div>
+      <div>123</div>
       <Button onClick={onTHrow}>{t('throw')}</Button>
+      <Dropdown
+        trigger={<Button>{`open`}</Button>}
+        items={[
+          { content: 'first' },
+          { content: 'second' },
+          { content: 'third' },
+        ]}
+      />
     </Page>
   );
 };

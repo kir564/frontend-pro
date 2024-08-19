@@ -48,19 +48,19 @@ export const EditableProfileCard: FC<EditableProfileCardProps> = ({}) => {
 
   const onChangeCity = useCallback(
     (value?: string) => {
-      dispatch(profileActions.updateProfile({ city: value } || ''));
+      dispatch(profileActions.updateProfile({ city: value }));
     },
     [dispatch],
   );
   const onChangeUserName = useCallback(
     (value?: string) => {
-      dispatch(profileActions.updateProfile({ username: value } || ''));
+      dispatch(profileActions.updateProfile({ username: value }));
     },
     [dispatch],
   );
   const onChangeAvatar = useCallback(
     (value?: string) => {
-      dispatch(profileActions.updateProfile({ avatar: value } || ''));
+      dispatch(profileActions.updateProfile({ avatar: value }));
     },
     [dispatch],
   );

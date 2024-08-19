@@ -1,4 +1,4 @@
-import { memo, ReactNode } from 'react';
+import { forwardRef, memo, ReactNode, Ref } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
 import { classNames } from 'shared/lib';
@@ -12,15 +12,14 @@ interface AppLinkProps extends LinkProps {
   children?: ReactNode;
 }
 
-export const AppLink = memo(function AppLink({
-  className,
-  to,
-  children,
-  theme = 'primary',
-  ...otherProps
-}: AppLinkProps) {
+export const AppLink = forwardRef(function AppLink(
+  props: AppLinkProps,
+  ref: Ref<HTMLAnchorElement>,
+) {
+  const { className, to, children, theme = 'primary', ...otherProps } = props;
   return (
     <Link
+      ref={ref}
       to={to}
       className={classNames(cls.appLink, {}, [className, cls[theme]])}
       {...otherProps}

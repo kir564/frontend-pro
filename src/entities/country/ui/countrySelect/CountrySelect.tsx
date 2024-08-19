@@ -6,6 +6,7 @@ import cls from './CountrySelect.module.scss';
 import { Select } from 'shared/ui';
 import { SelectOptions } from 'shared/ui/select/Select';
 import { CountryType } from '../../model/types/country';
+import { Listbox } from 'shared/ui/ListBox/ListBox';
 
 interface CountryTypeProps {
   className?: string;
@@ -33,10 +34,11 @@ export const CountrySelect: FC<CountryTypeProps> = ({
   };
 
   return (
-    <Select
+    <Listbox
+      label={`Укажите страну`}
       readonly={readonly}
-      className={classNames(cls.currencySelect, {}, [className])}
-      options={optionCurrency}
+      className={classNames(cls.countrySelect, {}, [className])}
+      items={optionCurrency}
       value={value}
       onChange={onChangeHandler}
     />
