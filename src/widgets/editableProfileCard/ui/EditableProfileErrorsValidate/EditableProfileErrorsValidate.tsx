@@ -6,11 +6,13 @@ import { VALIDATE_PROFILE_ERROR } from 'entities/profile/model/services/validate
 import { useSelector } from 'react-redux';
 import { getProfileValidateError } from 'entities/profile';
 
-interface ProfileErrorsValidateProps {
+interface EditableProfileErrorsValidateProps {
   className?: string;
 }
 
-export const ProfileErrorsValidate: FC<ProfileErrorsValidateProps> = ({}) => {
+export const EditableProfileErrorsValidate: FC<
+  EditableProfileErrorsValidateProps
+> = ({}) => {
   const { t } = useTranslation('profile');
   const validateErrors = useSelector(getProfileValidateError);
 
@@ -33,6 +35,7 @@ export const ProfileErrorsValidate: FC<ProfileErrorsValidateProps> = ({}) => {
           key={error}
           variant={`error`}
           text={VALIDATE_ERROR_TRANSLATE[error]}
+          data-testid={`EditableProfileCard.Error`}
         />
       ))}
     </>

@@ -22,7 +22,7 @@ export const ArticleRecommendationsList = memo(
       error,
     } = useGetArticlesRecommendationsQuery(4);
 
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
       return null;
     }
 
@@ -31,13 +31,11 @@ export const ArticleRecommendationsList = memo(
         className={classNames(cls.articleRecommendationsList, {}, [className])}
       >
         <Text title={t('recommendations')} className={cls.commentsTitle} />
-        {articles && (
-          <ArticleList
-            target={`_blank`}
-            articles={articles}
-            className={cls.recommendations}
-          />
-        )}
+        <ArticleList
+          target={`_blank`}
+          articles={articles}
+          className={cls.recommendations}
+        />
       </div>
     );
   },

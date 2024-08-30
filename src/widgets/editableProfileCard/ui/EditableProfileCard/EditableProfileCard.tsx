@@ -12,6 +12,8 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks';
 import { CurrencyType } from 'entities/currency';
 import { CountryType } from 'entities/country';
+import { EditableProfilePageHeader } from '../EditableProfilePageHeader/EditableProfilePageHeader';
+import { EditableProfileErrorsValidate } from '../EditableProfileErrorsValidate/EditableProfileErrorsValidate';
 
 interface EditableProfileCardProps {
   className?: string;
@@ -79,19 +81,23 @@ export const EditableProfileCard: FC<EditableProfileCardProps> = ({}) => {
   );
 
   return (
-    <ProfileCard
-      data={data}
-      isLoading={isLoading}
-      error={error}
-      readonly={readonly}
-      onChangeFirstName={onChangeFirstName}
-      onChangeLastName={onChangeLastName}
-      onChangeAge={onChangeAge}
-      onChangeCity={onChangeCity}
-      onChangeUserName={onChangeUserName}
-      onChangeAvatar={onChangeAvatar}
-      onChangeCurrency={onChangeCurrency}
-      onChangeCountry={onChangeCountry}
-    />
+    <>
+      <EditableProfilePageHeader />
+      <EditableProfileErrorsValidate />
+      <ProfileCard
+        data={data}
+        isLoading={isLoading}
+        error={error}
+        readonly={readonly}
+        onChangeFirstName={onChangeFirstName}
+        onChangeLastName={onChangeLastName}
+        onChangeAge={onChangeAge}
+        onChangeCity={onChangeCity}
+        onChangeUserName={onChangeUserName}
+        onChangeAvatar={onChangeAvatar}
+        onChangeCurrency={onChangeCurrency}
+        onChangeCountry={onChangeCountry}
+      />
+    </>
   );
 };

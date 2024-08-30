@@ -5,9 +5,7 @@ import { classNames, DynamicModuleLoader, ReducersList } from 'shared/lib';
 import cls from './ProfilePage.module.scss';
 import { fetchProfileData, profileReducer } from 'entities/profile';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
-import { ProfilePageHeader } from './profilePageHeader/ProfilePageHeader';
 import { EditableProfileCard } from 'widgets/editableProfileCard';
-import { ProfileErrorsValidate } from './profileErrorsValidate/ProfileErrorsValidate';
 import { useParams } from 'react-router-dom';
 import { Page } from 'widgets/page/Page';
 
@@ -34,8 +32,6 @@ export const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
       <Page className={classNames(cls.profilePage, {}, [className])}>
-        <ProfilePageHeader />
-        <ProfileErrorsValidate />
         <EditableProfileCard />
       </Page>
     </DynamicModuleLoader>

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export const useInitialEffect = (cb: () => void) => {
   useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
+    if (__PROJECT__ !== 'jest' && __PROJECT__ !== 'storybook') {
       cb();
     }
     // eslint-disable-next-line

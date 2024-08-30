@@ -24,6 +24,7 @@ interface TextProps {
   variant?: VariantText;
   align?: AlignText;
   size?: SizeText;
+  'data-testid'?: string;
 }
 
 export const Text: FC<TextProps> = ({
@@ -33,6 +34,7 @@ export const Text: FC<TextProps> = ({
   variant = 'primary',
   align = 'left',
   size = 'm',
+  'data-testid': dataTestId = 'Text',
 }) => {
   const HeaderTag = mapSizeToHeaderTag[size];
 
@@ -45,8 +47,16 @@ export const Text: FC<TextProps> = ({
         cls[size],
       ])}
     >
-      {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
-      {text && <p className={cls.text}>{text}</p>}
+      {title && (
+        <HeaderTag data-testid={`${dataTestId}.Header`} className={cls.title}>
+          {title}
+        </HeaderTag>
+      )}
+      {text && (
+        <p className={cls.text} data-testid={`${dataTestId}.Paragraph`}>
+          {text}
+        </p>
+      )}
     </div>
   );
 };

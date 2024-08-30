@@ -71,6 +71,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({
       {data?.avatar && <Avatar src={data.avatar} />}
       <div className={cls.data}>
         <Input
+          data-testid={`ProfileCard.firstName`}
           readonly={readonly}
           className={cls.input}
           value={data?.first}
@@ -78,6 +79,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({
           onChange={onChangeFirstName}
         />
         <Input
+          data-testid={`ProfileCard.lastName`}
           readonly={readonly}
           className={cls.input}
           value={data?.lastName}
