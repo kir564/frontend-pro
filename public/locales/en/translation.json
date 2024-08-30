@@ -12,5 +12,7 @@
   "send-new-comment": "send",
   "logo": "LOGO",
   "create-article": "Create article",
-  "profile": "Profile"
+  "profile": "Profile",
+  "admin-panel": "Admin-panel",
+  "no-access": "No Access!"
 }

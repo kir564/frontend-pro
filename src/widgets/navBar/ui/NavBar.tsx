@@ -6,8 +6,12 @@ import cls from './NavBar.module.scss';
 import { AppLink, Avatar, Button, Text } from 'shared/ui';
 import { LoginModal } from 'features/authByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/user';
-import { routeConfig } from 'app/providers/router/config/routeConfig';
+import {
+  getUserAuthData,
+  isAdmin,
+  isManager,
+  userActions,
+} from 'entities/user';
 import { routePath } from 'shared/config/router/routePath';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 
@@ -21,6 +25,8 @@ export const NavBar: FC<NavBarProps> = memo(function NavBar({
   const { t } = useTranslation();
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
+  const isUserAdmin = useSelector(isAdmin);
+  const isUserManager = useSelector(isManager);
 
   const [isAuthModal, setIsAuthModal] = useState(false);
 
@@ -34,7 +40,26 @@ export const NavBar: FC<NavBarProps> = memo(function NavBar({
     dispatch(userActions.removeAuthUser());
   };
 
+  const isAdminPanelAvailable = isUserAdmin || isUserManager;
+
   if (authData) {
+    const items = [
+      {
+        content: t('profile'),
+        href: `${routePath.profile}/${authData.id}`,
+      },
+      {
+        content: t('log-out'),
+        onClick: onLogOut,
+      },
+    ];
+
+    if (isAdminPanelAvailable) {
+      items.unshift({
+        content: t('admin-panel'),
+        href: `${routePath.admin_panel}`,
+      });
+    }
     return (
       <header className={classNames(cls.navBar, {}, [className])}>
         <LoginModal
@@ -50,16 +75,7 @@ export const NavBar: FC<NavBarProps> = memo(function NavBar({
           <Dropdown
             direction={`bottomRight`}
             trigger={<Avatar src={authData.avatar} size={30} />}
-            items={[
-              {
-                content: t('profile'),
-                href: `${routePath.profile}/${authData.id}`,
-              },
-              {
-                content: t('log-out'),
-                onClick: onLogOut,
-              },
-            ]}
+            items={items}
           />
         </div>
       </header>

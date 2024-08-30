@@ -6,7 +6,9 @@ export type AppRoutes =
   | 'articles'
   | 'article_details'
   | 'article_create'
-  | 'article_edit';
+  | 'article_edit'
+  | 'admin_panel'
+  | 'forbidden';
 
 export const routePath: Record<AppRoutes, string> = {
   main: '/',
@@ -16,5 +18,7 @@ export const routePath: Record<AppRoutes, string> = {
   article_details: '/articles/',
   article_create: '/articles/new',
   article_edit: '/articles/:id/edit',
+  admin_panel: '/admin',
+  forbidden: '/forbidden',
   not_found: '*',
 };

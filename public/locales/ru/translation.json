@@ -12,5 +12,7 @@
   "send-new-comment": "отправить",
   "logo": "ЛОГОТИП",
   "create-article": "Создать статью",
-  "profile": "Профиль"
+  "profile": "Профиль",
+  "admin-panel": "Админка",
+  "no-access": "Нет Доступа!"
 }
