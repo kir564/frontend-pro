@@ -44,6 +44,9 @@ export const NavBar: FC<NavBarProps> = memo(function NavBar({
 
   if (authData) {
     const items = [
+      ...(isAdminPanelAvailable
+        ? [{ content: t('admin-panel'), href: `${routePath.admin_panel}` }]
+        : []),
       {
         content: t('profile'),
         href: `${routePath.profile}/${authData.id}`,
@@ -54,12 +57,6 @@ export const NavBar: FC<NavBarProps> = memo(function NavBar({
       },
     ];
 
-    if (isAdminPanelAvailable) {
-      items.unshift({
-        content: t('admin-panel'),
-        href: `${routePath.admin_panel}`,
-      });
-    }
     return (
       <header className={classNames(cls.navBar, {}, [className])}>
         <LoginModal
@@ -87,6 +84,7 @@ export const NavBar: FC<NavBarProps> = memo(function NavBar({
       {isAuthModal && (
         <LoginModal isOpen={isAuthModal} onClose={closeAuthModal} lazy />
       )}
+      <Text variant={`inverted`} className={cls.logo} title={t('logo')} />
       <div className={cls.links}>
         <Button theme="cleanInverted" onClick={closeAuthModal}>
           {t('log-in')}

@@ -2,7 +2,7 @@ import { Menu } from '@headlessui/react';
 import { classNames } from 'shared/lib';
 import cls from './Dropdown.module.scss';
 import { Fragment } from 'react/jsx-runtime';
-import { forwardRef, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
 import { AppLink } from '../appLink/AppLink';
 
