@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
@@ -41,6 +42,12 @@ export const buildPlugins = (
     plugins.push(
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
+      }),
+    );
+    plugins.push(
+      new CircularDependencyPlugin({
+        exclude: /node_modules/,
+        failOnError: true,
       }),
     );
   }

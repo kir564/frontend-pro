@@ -3,9 +3,8 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib';
 import cls from './CountrySelect.module.scss';
-import { Select } from 'shared/ui';
 import { SelectOptions } from 'shared/ui/select/Select';
-import { CountryType } from '../../model/types/country';
+import type { CountryType } from '../../model/types/country';
 import { Listbox } from 'shared/ui/ListBox/ListBox';
 
 interface CountryTypeProps {

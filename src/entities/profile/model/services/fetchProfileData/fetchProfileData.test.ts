@@ -1,5 +1,5 @@
 import { fetchProfileData } from './fetchProfileData';
-import { ProfileSchema } from 'entities/profile';
+import type { ProfileSchema } from 'entities/profile';
 import { TestAsyncThunk } from 'shared/lib/tests';
 
 describe('fetchProfileData', () => {

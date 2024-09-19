@@ -23,7 +23,7 @@ interface ListBoxProps {
 
 import { Listbox as HListbox } from '@headlessui/react';
 import { Button } from '../button/Button';
-import { DropdownDirection } from 'shared/types/ui';
+import type { DropdownDirection } from 'shared/types/ui';
 
 export function Listbox({
   items,

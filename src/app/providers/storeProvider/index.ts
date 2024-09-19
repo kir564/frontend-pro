@@ -4,4 +4,4 @@ export type {
   IReduxStoreWithManager,
   ThunkConfig,
 } from './config/StateSchema';
-export { AppDispatch } from './config/store';
+export type { AppDispatch } from './config/store';

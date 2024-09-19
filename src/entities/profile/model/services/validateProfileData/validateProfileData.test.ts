@@ -1,4 +1,4 @@
-import { Profile } from '../../types/ProfileSchema';
+import type { Profile } from '../../types/ProfileSchema';
 import {
   VALIDATE_PROFILE_ERROR,
   validateProfileData,

@@ -10,8 +10,8 @@ import {
   profileActions,
 } from 'entities/profile';
 import { useAppDispatch } from 'shared/lib/hooks';
-import { CurrencyType } from 'entities/currency';
-import { CountryType } from 'entities/country';
+import type { CurrencyType } from 'entities/currency';
+import type { CountryType } from 'entities/country';
 import { EditableProfilePageHeader } from '../EditableProfilePageHeader/EditableProfilePageHeader';
 import { EditableProfileErrorsValidate } from '../EditableProfileErrorsValidate/EditableProfileErrorsValidate';
 

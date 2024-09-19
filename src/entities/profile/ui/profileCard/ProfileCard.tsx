@@ -5,10 +5,11 @@ import { classNames } from 'shared/lib';
 import cls from './ProfileCard.module.scss';
 
 import { Avatar, Input, Loader, Text } from 'shared/ui';
-import { Profile } from '../../model/types/ProfileSchema';
-import { CurrencySelect, CurrencyType } from 'entities/currency';
-import { CountrySelect, CountryType } from 'entities/country';
-import { Listbox } from 'shared/ui/ListBox/ListBox';
+import type { Profile } from '../../model/types/ProfileSchema';
+import { CurrencySelect } from 'entities/currency';
+import { CountrySelect } from 'entities/country';
+import type { CurrencyType } from 'entities/currency';
+import type { CountryType } from 'entities/country';
 
 interface ProfileCardProps {
   className?: string;

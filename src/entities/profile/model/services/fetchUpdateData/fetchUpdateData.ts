@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/storeProvider';
-import { Profile } from '../../types/ProfileSchema';
+import type { Profile } from '../../types/ProfileSchema';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
-import { profileActions } from '../../slice/profileSlice';
+// import { profileActions } from '../../slice/profileSlice';
 import {
   VALIDATE_PROFILE_ERROR,
   validateProfileData,
@@ -33,7 +33,7 @@ export const fetchUpdateData = createAsyncThunk<
       throw new Error();
     }
 
-    thunkAPI.dispatch(profileActions.setReadOnly(true));
+    // thunkAPI.dispatch(profileActions.setReadOnly(true));
 
     return response.data;
   } catch (error) {

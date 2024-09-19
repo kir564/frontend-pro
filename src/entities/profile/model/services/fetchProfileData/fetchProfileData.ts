@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/storeProvider';
 import axios, { AxiosError } from 'axios';
-import { Profile } from '../../types/ProfileSchema';
+import type { Profile } from '../../types/ProfileSchema';
 
 interface IError {
   message: string;

@@ -5,7 +5,7 @@ import { classNames } from 'shared/lib';
 import cls from './CurrencySelect.module.scss';
 import { Select } from 'shared/ui';
 import { SelectOptions } from 'shared/ui/select/Select';
-import { CurrencyType } from 'entities/currency/model/types/currency';
+import type { CurrencyType } from 'entities/currency/model/types/currency';
 import { Listbox } from 'shared/ui/ListBox/ListBox';
 
 interface CurrencySelectProps {

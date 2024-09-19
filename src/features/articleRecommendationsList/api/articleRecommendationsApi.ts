@@ -1,4 +1,4 @@
-import { Article } from 'entities/article';
+import type { Article } from 'entities/article';
 import { rtkApi } from 'shared/api/rtkApi';
 import { routePath } from 'shared/config/router/routePath';
 

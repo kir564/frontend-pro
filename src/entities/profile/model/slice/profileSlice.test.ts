@@ -1,5 +1,5 @@
 import { profileActions, profileReducer } from './profileSlice';
-import { ProfileSchema } from '../types/ProfileSchema';
+import type { ProfileSchema } from '../types/ProfileSchema';
 import { fetchUpdateData } from '../services/fetchUpdateData/fetchUpdateData';
 
 describe('profileSlice', () => {

@@ -1,4 +1,4 @@
-import { Profile } from '../../types/ProfileSchema';
+import type { Profile } from '../../types/ProfileSchema';
 
 export const VALIDATE_PROFILE_ERROR = {
   INCORRECT_USER_DATA: 'INCORRECT_USER_DATA',

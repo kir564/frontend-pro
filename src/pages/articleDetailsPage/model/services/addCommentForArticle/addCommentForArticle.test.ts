@@ -1,5 +1,5 @@
 import { addCommentForArticle } from './addCommentForArticle';
-import { ArticleDetailsCommentsSchema } from '../../types/articleDetailsCommentsSchema';
+import type { ArticleDetailsCommentsSchema } from '../../types/articleDetailsCommentsSchema';
 import { TestAsyncThunk } from 'shared/lib/tests';
 import { getUserAuthData } from 'entities/user';
 import { getArticleDetailsData } from 'entities/article';

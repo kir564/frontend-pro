@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleDetailsPage } from './ArticleDetailsPage';
 
 import { StoreDecorator } from 'shared/config/storybook/decorators';
-import { Article } from 'entities/article/model/types/article';
+import type { Article } from 'entities/article/model/types/article';
 
 import { reactRouterParameters } from 'storybook-addon-remix-react-router';
 

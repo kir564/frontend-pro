@@ -5,12 +5,14 @@ import { classNames } from 'shared/lib';
 import cls from './ArticlesPageFilters.module.scss';
 import { useAppDispatch } from 'shared/lib/hooks';
 import {
-  ArticleSortField,
   ArticleSortSelector,
-  ArticleType,
   ArticleTypeTabs,
-  ArticleView,
   ArticleViewSelector,
+} from 'entities/article';
+import type {
+  ArticleSortField,
+  ArticleType,
+  ArticleView,
 } from 'entities/article';
 import { articlesPageAction } from '../../model/slices/articlesPageSlice';
 import { useSelector } from 'react-redux';
@@ -22,7 +24,7 @@ import {
   getArticlesPageType,
 } from '../../model/selectors/articlePageSelectors';
 import { Card, Input } from 'shared/ui';
-import { SortOrder } from 'shared/types';
+import type { SortOrder } from 'shared/types';
 import { fetchArticlesList } from 'pages/articlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 

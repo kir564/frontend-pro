@@ -1,5 +1,5 @@
 import { fetchUpdateData } from './fetchUpdateData';
-import { Profile } from 'entities/profile';
+import type { Profile } from 'entities/profile';
 import { TestAsyncThunk } from 'shared/lib/tests';
 import { VALIDATE_PROFILE_ERROR } from '../validateProfileData/validateProfileData';
 

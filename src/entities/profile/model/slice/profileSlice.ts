@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Profile, ProfileSchema } from '../types/ProfileSchema';
+import type { Profile, ProfileSchema } from '../types/ProfileSchema';
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData';
 import { fetchUpdateData } from '../services/fetchUpdateData/fetchUpdateData';
 
@@ -56,6 +56,7 @@ export const profileSlice = createSlice({
           state.isLoading = false;
           state.data = action.payload;
           state.form = action.payload;
+          state.readonly = true;
         },
       )
       .addCase(fetchUpdateData.pending, (state) => {

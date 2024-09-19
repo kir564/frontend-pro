@@ -1,5 +1,5 @@
-import { Article } from '../../types/article';
-import { ArticleDetailsSchema } from '../../types/ArticleDetailsSchema';
+import type { Article } from '../../types/article';
+import type { ArticleDetailsSchema } from '../../types/ArticleDetailsSchema';
 import { fetchArticleById } from './fetchArticleById';
 import { TestAsyncThunk } from 'shared/lib/tests';
 

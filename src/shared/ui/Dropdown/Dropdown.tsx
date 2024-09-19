@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib';
 import cls from './Dropdown.module.scss';
 import { Fragment } from 'react/jsx-runtime';
 import { ReactNode } from 'react';
-import { DropdownDirection } from 'shared/types/ui';
+import type { DropdownDirection } from 'shared/types/ui';
 import { AppLink } from '../appLink/AppLink';
 
 export interface DropdownItem {
