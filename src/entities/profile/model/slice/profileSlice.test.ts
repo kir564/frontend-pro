@@ -95,6 +95,7 @@ describe('profileSlice', () => {
       ),
     ).toEqual({
       isLoading: false,
+      readonly: true,
       data: {
         first: 'admin edit',
       },
