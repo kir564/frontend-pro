@@ -6,7 +6,7 @@ import cls from './CurrencySelect.module.scss';
 import { Select } from 'shared/ui';
 import { SelectOptions } from 'shared/ui/select/Select';
 import type { CurrencyType } from 'entities/currency/model/types/currency';
-import { Listbox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/popups';
 
 interface CurrencySelectProps {
   className?: string;
@@ -34,8 +34,8 @@ export const CurrencySelect: FC<CurrencySelectProps> = ({
   };
 
   return (
-    <Listbox
-      // direction={`top`}
+    <ListBox
+      direction={`topLeft`}
       readonly={readonly}
       className={classNames(cls.currencySelect, {}, [className])}
       items={optionCurrency}

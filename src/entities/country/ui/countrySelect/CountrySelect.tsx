@@ -5,7 +5,7 @@ import { classNames } from 'shared/lib';
 import cls from './CountrySelect.module.scss';
 import { SelectOptions } from 'shared/ui/select/Select';
 import type { CountryType } from '../../model/types/country';
-import { Listbox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/popups';
 
 interface CountryTypeProps {
   className?: string;
@@ -33,8 +33,9 @@ export const CountrySelect: FC<CountryTypeProps> = ({
   };
 
   return (
-    <Listbox
+    <ListBox
       label={`Укажите страну`}
+      direction={`topLeft`}
       readonly={readonly}
       className={classNames(cls.countrySelect, {}, [className])}
       items={optionCurrency}

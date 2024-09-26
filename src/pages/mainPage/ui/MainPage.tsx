@@ -5,8 +5,8 @@ import { classNames } from 'shared/lib';
 import cls from './MainPage.module.scss';
 import { Button } from 'shared/ui';
 import { Page } from 'widgets/page/Page';
-import { Listbox } from 'shared/ui/ListBox/ListBox';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { ListBox } from 'shared/ui/popups';
+import { Dropdown } from 'shared/ui/popups';
 
 interface MainPageProps {
   className?: string;
@@ -31,7 +31,7 @@ export const MainPage: FC<MainPageProps> = ({ className }) => {
     <Page className={classNames(cls.mainPage, {}, [className])}>
       {t('main-page')}
       <p>{t('new-key')}</p>
-      <Listbox
+      <ListBox
         defaultValue={`Выберите значение`}
         onChange={() => {}}
         value={undefined}

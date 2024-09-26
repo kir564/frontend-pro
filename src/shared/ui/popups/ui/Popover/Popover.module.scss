@@ -1,0 +1,16 @@
+.popover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel {
+  position: absolute;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  background: var(--card-bg-color);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}

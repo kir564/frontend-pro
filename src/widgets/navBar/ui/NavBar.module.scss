@@ -9,8 +9,27 @@
 
 .links {
   margin-left: auto;
+  display: flex;
+  gap: 20px;
+  position: relative;
 }
 
 .logo {
   width: var(--sidebar-width);
+}
+
+.number {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #f00;
+  background-color: #f00;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 100;
+  left: 20px;
+  color: white;
+  font-size: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
