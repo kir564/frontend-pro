@@ -1,27 +1,29 @@
-import { FC } from 'react';
+import { memo, ReactNode } from 'react';
+
 import { classNames } from 'shared/lib';
-import cls from './Modal.module.scss';
+import cls from './Drawer.module.scss';
 import { Portal } from '../portal/Portal';
 import { useThemeContext } from 'app/providers/themeProvider';
 import { Overlay } from '../overlay/Overlay';
 import { useModal } from 'shared/lib/hooks/useModal/useModal';
 
-interface ModalProps {
+interface DrawerProps {
   className?: string;
+  children: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
   lazy?: boolean;
 }
 
-export const Modal: FC<ModalProps> = ({
+export const Drawer = memo(function Drawer({
   className,
   children,
   isOpen,
   onClose,
   lazy,
-}) => {
+}: DrawerProps) {
   const { theme } = useThemeContext();
-  const { isMounted, close } = useModal({ isOpen, onClose });
+  const { close, isMounted } = useModal({ isOpen, onClose });
 
   if (lazy && !isMounted) {
     return null;
@@ -30,17 +32,15 @@ export const Modal: FC<ModalProps> = ({
   return (
     <Portal>
       <div
-        className={classNames(
-          cls.modal,
-          {
-            [cls.opened]: isOpen,
-          },
-          [className, theme],
-        )}
+        className={classNames(cls.drawer, { [cls.opened]: isOpen }, [
+          className,
+          theme,
+          'app-drawer',
+        ])}
       >
         <Overlay onClick={close} />
         <div className={cls.content}>{children}</div>
       </div>
     </Portal>
   );
-};
+});
