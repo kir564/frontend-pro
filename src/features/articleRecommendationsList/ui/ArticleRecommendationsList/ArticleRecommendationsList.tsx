@@ -1,10 +1,10 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './ArticleRecommendationsList.module.scss';
-import { Text } from 'shared/ui';
-import { ArticleList } from 'entities/article';
+import { Text } from '@/shared/ui';
+import { ArticleList } from '@/entities/article';
 import { useGetArticlesRecommendationsQuery } from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {

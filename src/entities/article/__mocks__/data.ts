@@ -1,5 +1,5 @@
 import type { Article } from '../model/types/article';
-import avatar from 'shared/assets/tests/avatar.jpg';
+import avatar from '@/shared/assets/tests/avatar.jpg';
 
 export const article: Article = {
   id: '1',

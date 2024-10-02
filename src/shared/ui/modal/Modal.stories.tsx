@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 import { Modal } from './Modal';
-import { ThemeDecorator } from 'shared/config/storybook/decorators';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators';
 
 const meta = {
   title: 'shared/Modal',

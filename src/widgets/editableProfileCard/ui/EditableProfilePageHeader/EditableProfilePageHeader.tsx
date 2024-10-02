@@ -1,18 +1,18 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './EditableProfilePageHeader.module.scss';
-import { Button, Text } from 'shared/ui';
+import { Button, Text } from '@/shared/ui';
 import { useSelector } from 'react-redux';
 import {
   fetchUpdateData,
   getProfileData,
   getReadOnly,
   profileActions,
-} from 'entities/profile';
-import { useAppDispatch } from 'shared/lib/hooks';
-import { getUserAuthData } from 'entities/user';
+} from '@/entities/profile';
+import { useAppDispatch } from '@/shared/lib/hooks';
+import { getUserAuthData } from '@/entities/user';
 
 interface ProfilePageHeaderProps {
   className?: string;

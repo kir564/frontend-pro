@@ -1,7 +1,7 @@
 import { forwardRef, memo, ReactNode, Ref } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './AppLink.module.scss';
 
 export type AppLinkTheme = 'primary' | 'secondary';

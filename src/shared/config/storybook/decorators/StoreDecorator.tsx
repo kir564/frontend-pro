@@ -1,11 +1,11 @@
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import type { Decorator } from '@storybook/react';
-import { StateSchema, StoreProvider } from 'app/providers/storeProvider';
-import { articleDetailsReducer } from 'entities/article';
-import { addCommentFormReducer } from 'features/addCommentForm';
-import { articleDetailsPageReducer } from 'pages/articleDetailsPage/model/slice';
-import { articlesPageReducer } from 'pages/articlesPage';
-import { ReducersList } from 'shared/lib/components/dynamicModuleLoader/DynamicModuleLoader';
+import { StateSchema, StoreProvider } from '@/app/providers/storeProvider';
+import { articleDetailsReducer } from '@/entities/article';
+import { addCommentFormReducer } from '@/features/addCommentForm';
+import { articleDetailsPageReducer } from '@/pages/articleDetailsPage/model/slice';
+import { articlesPageReducer } from '@/pages/articlesPage';
+import { ReducersList } from '@/shared/lib/components/dynamicModuleLoader/DynamicModuleLoader';
 // import { loginReducer } from 'features/authByUsername/model/slice/loginSlice';
 
 // const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {

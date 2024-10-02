@@ -1,10 +1,10 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './ForbiddenPage.module.scss';
-import { Page } from 'widgets/page/Page';
-import { Text } from 'shared/ui';
+import { Page } from '@/widgets/page/Page';
+import { Text } from '@/shared/ui';
 
 interface ForbiddenPageProps {
   className?: string;

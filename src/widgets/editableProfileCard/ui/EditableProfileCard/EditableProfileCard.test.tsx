@@ -1,10 +1,10 @@
 import userEvent from '@testing-library/user-event';
-import { componentRender } from 'shared/lib/tests';
+import { componentRender } from '@/shared/lib/tests';
 import { EditableProfileCard } from './EditableProfileCard';
-import { Profile, profileReducer } from 'entities/profile';
+import { Profile, profileReducer } from '@/entities/profile';
 import { screen } from '@testing-library/react';
-import { IOption } from 'shared/lib/tests/componentRender/componentRender';
-import { instanceApi } from 'shared/api/api';
+import { IOption } from '@/shared/lib/tests/componentRender/componentRender';
+import { instanceApi } from '@/shared/api/api';
 
 describe('EditableProfileCard', () => {
   const profile: Profile = {

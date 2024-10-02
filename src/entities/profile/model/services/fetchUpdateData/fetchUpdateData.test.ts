@@ -1,6 +1,6 @@
 import { fetchUpdateData } from './fetchUpdateData';
-import type { Profile } from 'entities/profile';
-import { TestAsyncThunk } from 'shared/lib/tests';
+import type { Profile } from '@/entities/profile';
+import { TestAsyncThunk } from '@/shared/lib/tests';
 import { VALIDATE_PROFILE_ERROR } from '../validateProfileData/validateProfileData';
 
 describe('fetchProfileData', () => {

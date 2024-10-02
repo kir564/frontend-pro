@@ -5,7 +5,9 @@ export const buildResolvers = (
   options: BuildOptions,
 ): webpack.ResolveOptions => ({
   extensions: ['.tsx', '.ts', '.js'],
-  alias: {},
+  alias: {
+    '@': options.paths.src,
+  },
   preferAbsolute: true,
   mainFiles: ['index'],
   modules: [options.paths.src, 'node_modules'],

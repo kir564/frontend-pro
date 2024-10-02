@@ -1,6 +1,6 @@
 import { FC, useCallback } from 'react';
 
-import { ProfileCard } from 'entities/profile/ui';
+import { ProfileCard } from '@/entities/profile/ui';
 import { useSelector } from 'react-redux';
 import {
   getProfileError,
@@ -8,10 +8,10 @@ import {
   getProfileIsLoading,
   getReadOnly,
   profileActions,
-} from 'entities/profile';
-import { useAppDispatch } from 'shared/lib/hooks';
-import type { CurrencyType } from 'entities/currency';
-import type { CountryType } from 'entities/country';
+} from '@/entities/profile';
+import { useAppDispatch } from '@/shared/lib/hooks';
+import type { CurrencyType } from '@/entities/currency';
+import type { CountryType } from '@/entities/country';
 import { EditableProfilePageHeader } from '../EditableProfilePageHeader/EditableProfilePageHeader';
 import { EditableProfileErrorsValidate } from '../EditableProfileErrorsValidate/EditableProfileErrorsValidate';
 

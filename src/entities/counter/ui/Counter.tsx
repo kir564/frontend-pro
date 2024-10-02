@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/storeProvider';
+import { StateSchema } from '@/app/providers/storeProvider';
 import { useSelector, useDispatch } from 'react-redux';
 import { counterActions } from '../model/slice/counterSlice';
 

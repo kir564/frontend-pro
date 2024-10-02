@@ -1,13 +1,13 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames, DynamicModuleLoader, ReducersList } from 'shared/lib';
+import { classNames, DynamicModuleLoader, ReducersList } from '@/shared/lib';
 import cls from './ArticleDetailsPage.module.scss';
-import { ArticleDetails } from 'entities/article';
+import { ArticleDetails } from '@/entities/article';
 import { useParams } from 'react-router-dom';
-import { Page } from 'widgets/page/Page';
+import { Page } from '@/widgets/page/Page';
 import { articleDetailsPageReducer } from '../model/slice';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from './ArticleDetailsComments/ArticleDetailsComments';
 
 interface articleDetailsPageProps {

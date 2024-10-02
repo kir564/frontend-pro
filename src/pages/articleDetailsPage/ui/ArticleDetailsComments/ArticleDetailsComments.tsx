@@ -1,13 +1,13 @@
-import { CommentList } from 'entities/comment';
-import { AddCommentForm } from 'features/addCommentForm';
+import { CommentList } from '@/entities/comment';
+import { AddCommentForm } from '@/features/addCommentForm';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import cls from './ArticleDetailsComments.module.scss';
 
-import { classNames } from 'shared/lib';
-import { Text } from 'shared/ui';
+import { classNames } from '@/shared/lib';
+import { Text } from '@/shared/ui';
 import { useSelector } from 'react-redux';
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';

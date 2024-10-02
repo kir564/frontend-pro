@@ -1,7 +1,7 @@
 import type { Article } from '../../types/article';
 import type { ArticleDetailsSchema } from '../../types/ArticleDetailsSchema';
 import { fetchArticleById } from './fetchArticleById';
-import { TestAsyncThunk } from 'shared/lib/tests';
+import { TestAsyncThunk } from '@/shared/lib/tests';
 
 describe('fetchArticleById', () => {
   const article: Article = {

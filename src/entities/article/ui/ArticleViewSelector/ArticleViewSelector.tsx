@@ -1,13 +1,13 @@
 import { memo, SVGProps, VFC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './ArticleViewSelector.module.scss';
 
-import ListIcon from 'shared/assets/icons/list.svg';
-import TiledIcon from 'shared/assets/icons/tiled.svg';
+import ListIcon from '@/shared/assets/icons/list.svg';
+import TiledIcon from '@/shared/assets/icons/tiled.svg';
 import { ArticleView } from '../../model/types/article';
-import { Button, Icon } from 'shared/ui';
+import { Button, Icon } from '@/shared/ui';
 
 export interface ViewType {
   view: ArticleView;

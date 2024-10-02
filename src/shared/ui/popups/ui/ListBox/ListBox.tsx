@@ -1,7 +1,7 @@
 import { Fragment, memo, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './ListBox.module.scss';
 import popupCls from '../../style/popup.module.scss';
 
@@ -24,7 +24,7 @@ interface ListBoxProps {
 
 import { Listbox as HListbox } from '@headlessui/react';
 import { Button } from '../../../button/Button';
-import type { DropdownDirection } from 'shared/types/ui';
+import type { DropdownDirection } from '@/shared/types/ui';
 
 export function ListBox({
   items,

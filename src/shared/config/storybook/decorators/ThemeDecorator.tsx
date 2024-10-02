@@ -1,6 +1,6 @@
 import type { Decorator } from '@storybook/react';
-import { ThemeProvider } from 'app/providers/themeProvider';
-import { AppTheme } from 'app/providers/themeProvider/lib/ThemeContext';
+import { ThemeProvider } from '@/app/providers/themeProvider';
+import { AppTheme } from '@/app/providers/themeProvider/lib/ThemeContext';
 
 export const ThemeDecorator = (theme: AppTheme): Decorator => {
   // eslint-disable-next-line react/display-name

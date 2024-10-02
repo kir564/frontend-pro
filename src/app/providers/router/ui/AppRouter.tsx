@@ -1,7 +1,7 @@
 import { memo, Suspense, useCallback } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AppRouteProps, routeConfig } from '../config/routeConfig';
-import { LoaderPage } from 'widgets/loaderPage';
+import { LoaderPage } from '@/widgets/loaderPage';
 
 import { RequireAuth } from './RequireAuth';
 

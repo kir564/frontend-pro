@@ -7,13 +7,13 @@ import {
 
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
-import { counterReducer } from 'entities/counter';
-import { userReducer } from 'entities/user';
+import { counterReducer } from '@/entities/counter';
+import { userReducer } from '@/entities/user';
 // import { loginReducer } from 'features/authByUsername';
 import { createReducerManager } from './reducerManager';
-import { instanceApi } from 'shared/api/api';
-import { scrollSaveReducer } from 'features/scrollSave';
-import { rtkApi } from 'shared/api/rtkApi';
+import { instanceApi } from '@/shared/api/api';
+import { scrollSaveReducer } from '@/features/scrollSave';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export const createReduxStore = (
   initialState?: StateSchema,

@@ -1,8 +1,8 @@
 import { addCommentForArticle } from './addCommentForArticle';
 import type { ArticleDetailsCommentsSchema } from '../../types/articleDetailsCommentsSchema';
-import { TestAsyncThunk } from 'shared/lib/tests';
-import { getUserAuthData } from 'entities/user';
-import { getArticleDetailsData } from 'entities/article';
+import { TestAsyncThunk } from '@/shared/lib/tests';
+import { getUserAuthData } from '@/entities/user';
+import { getArticleDetailsData } from '@/entities/article';
 
 jest.mock('entities/user', () => ({
   getUserAuthData: jest.fn(),

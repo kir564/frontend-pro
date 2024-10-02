@@ -1,12 +1,12 @@
 import { memo, ReactNode, useCallback, useEffect } from 'react';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './Drawer.module.scss';
 import { Portal } from '../portal/Portal';
-import { useThemeContext } from 'app/providers/themeProvider';
+import { useThemeContext } from '@/app/providers/themeProvider';
 import { Overlay } from '../overlay/Overlay';
+import { useAnimationLibs } from '@/shared/lib/components/animationProvider';
 // import { useModal } from 'shared/lib/hooks/useModal/useModal';
-import { useAnimationLibs } from 'shared/lib/components/animationProvider';
 
 // import { useDrag } from '@use-gesture/react';
 // import { a, useSpring, config } from '@react-spring/web';

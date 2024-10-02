@@ -1,12 +1,12 @@
 import { useThemeContext } from './providers/themeProvider';
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import { AppRouter } from './providers/router/ui/AppRouter';
-import { NavBar } from 'widgets/navBar';
-import { SideBar } from 'widgets/sideBar';
+import { NavBar } from '@/widgets/navBar';
+import { SideBar } from '@/widgets/sideBar';
 import { ErrorBoundary } from './providers/errorBoundary';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getUserInitAuth, userActions } from 'entities/user';
+import { getUserInitAuth, userActions } from '@/entities/user';
 
 export const App = () => {
   const { theme } = useThemeContext();

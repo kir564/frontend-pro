@@ -3,7 +3,7 @@ import { NavBar } from './NavBar';
 import {
   StoreDecorator,
   ThemeDecorator,
-} from 'shared/config/storybook/decorators';
+} from '@/shared/config/storybook/decorators';
 // import { BrowserRouter } from 'react-router-dom';
 
 const meta = {

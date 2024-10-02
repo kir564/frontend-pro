@@ -1,10 +1,10 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './ArticleImageBlockComponent.module.scss';
-import { ArticleImageBlock } from 'entities/article/model/types/article';
-import { Text } from 'shared/ui';
+import { ArticleImageBlock } from '@/entities/article/model/types/article';
+import { Text } from '@/shared/ui';
 
 interface ArticleImageBlockComponentProps {
   className?: string;

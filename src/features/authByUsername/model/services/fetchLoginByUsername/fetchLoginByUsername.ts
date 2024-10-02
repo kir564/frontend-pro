@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/storeProvider';
+import { ThunkConfig } from '@/app/providers/storeProvider';
 import axios, { AxiosError } from 'axios';
 
-import { IUser, userActions } from 'entities/user';
-import { USER_LOCAL_STORAGE_KEY } from 'shared/constants';
+import { IUser, userActions } from '@/entities/user';
+import { USER_LOCAL_STORAGE_KEY } from '@/shared/constants';
 
 export interface IAuthData {
   username: string;

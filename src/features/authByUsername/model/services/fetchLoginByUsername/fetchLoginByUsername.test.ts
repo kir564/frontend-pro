@@ -2,8 +2,8 @@
 import { fetchLoginByUsername } from './fetchLoginByUsername';
 // import { Dispatch } from '@reduxjs/toolkit';
 // import { StateSchema } from 'app/providers/storeProvider';
-import { userActions } from 'entities/user';
-import { TestAsyncThunk } from 'shared/lib/tests';
+import { userActions } from '@/entities/user';
+import { TestAsyncThunk } from '@/shared/lib/tests';
 
 // jest.mock('axios');
 // const mockedAxios = jest.mocked(axios, true);

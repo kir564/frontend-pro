@@ -1,10 +1,10 @@
 import { memo } from 'react';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './CommentList.module.scss';
 import type { Comment } from '../../model/types/comment';
 import { CommentCard } from '../commentCard/CommentCard';
-import { Text } from 'shared/ui';
+import { Text } from '@/shared/ui';
 
 import { useTranslation } from 'react-i18next';
 

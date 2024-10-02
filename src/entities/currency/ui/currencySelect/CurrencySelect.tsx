@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './CurrencySelect.module.scss';
-import { Select } from 'shared/ui';
-import { SelectOptions } from 'shared/ui/select/Select';
-import type { CurrencyType } from 'entities/currency/model/types/currency';
-import { ListBox } from 'shared/ui/popups';
+import { Select } from '@/shared/ui';
+import { SelectOptions } from '@/shared/ui/select/Select';
+import type { CurrencyType } from '@/entities/currency/model/types/currency';
+import { ListBox } from '@/shared/ui/popups';
 
 interface CurrencySelectProps {
   className?: string;

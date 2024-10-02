@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Text } from 'shared/ui';
-import { VALIDATE_PROFILE_ERROR } from 'entities/profile/model/services/validateProfileData/validateProfileData';
+import { Text } from '@/shared/ui';
+import { VALIDATE_PROFILE_ERROR } from '@/entities/profile/model/services/validateProfileData/validateProfileData';
 import { useSelector } from 'react-redux';
-import { getProfileValidateError } from 'entities/profile';
+import { getProfileValidateError } from '@/entities/profile';
 
 interface EditableProfileErrorsValidateProps {
   className?: string;

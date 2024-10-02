@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 
-import { classNames, DynamicModuleLoader, ReducersList } from 'shared/lib';
+import { classNames, DynamicModuleLoader, ReducersList } from '@/shared/lib';
 import cls from './ArticlesPage.module.scss';
 import { memo, useCallback } from 'react';
-import { ArticleList } from 'entities/article';
+import { ArticleList } from '@/entities/article';
 import {
   articlesPageReducer,
   getArticles,
@@ -13,9 +13,9 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../model/selectors/articlePageSelectors';
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks';
 
-import { Page } from 'widgets/page/Page';
+import { Page } from '@/widgets/page/Page';
 import { fetchNextArticlePage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlePage } from '../model/services/initArticlePage/initArticlePage';
 import { ArticlesPageFilters } from './ArticlesPageFilters/ArticlesPageFilters';

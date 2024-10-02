@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './LoaderPage.module.scss';
-import { Loader } from 'shared/ui';
+import { Loader } from '@/shared/ui';
 
 interface LoaderPageProps {
   className?: string;

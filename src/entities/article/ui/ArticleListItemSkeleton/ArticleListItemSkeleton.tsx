@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './ArticleListItemSkeleton.module.scss';
-import { ArticleView } from 'entities/article/model/types/article';
-import { Card, Skeleton } from 'shared/ui';
+import { ArticleView } from '@/entities/article/model/types/article';
+import { Card, Skeleton } from '@/shared/ui';
 
 interface ArticleListItemSkeletonProps {
   className?: string;

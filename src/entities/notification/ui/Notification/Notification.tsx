@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import { INotification } from '../../model/types/notification';
-import { AppLink, Card, Text } from 'shared/ui';
+import { AppLink, Card, Text } from '@/shared/ui';
 
 interface NotificationProps {
   className?: string;

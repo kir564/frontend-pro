@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib';
+import { classNames } from '@/shared/lib';
 import cls from './MainPage.module.scss';
-import { Button } from 'shared/ui';
-import { Page } from 'widgets/page/Page';
-import { ListBox } from 'shared/ui/popups';
-import { Dropdown } from 'shared/ui/popups';
+import { Button } from '@/shared/ui';
+import { Page } from '@/widgets/page/Page';
+import { ListBox } from '@/shared/ui/popups';
+import { Dropdown } from '@/shared/ui/popups';
 
 interface MainPageProps {
   className?: string;

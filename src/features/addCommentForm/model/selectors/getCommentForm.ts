@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/storeProvider';
+import { StateSchema } from '@/app/providers/storeProvider';
 
 export const getCommentFormText = (state: StateSchema) =>
   state.addCommentForm?.text || '';

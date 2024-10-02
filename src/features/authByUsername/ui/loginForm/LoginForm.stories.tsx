@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { LoginForm } from './LoginForm';
-import { StoreDecorator } from 'shared/config/storybook/decorators';
-import { loginReducer } from 'features/authByUsername/model/slice/loginSlice';
+import { StoreDecorator } from '@/shared/config/storybook/decorators';
+import { loginReducer } from '@/features/authByUsername/model/slice/loginSlice';
 
 const meta = {
   title: 'features/LoginForm',

@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames, DynamicModuleLoader, ReducersList } from 'shared/lib';
+import { classNames, DynamicModuleLoader, ReducersList } from '@/shared/lib';
 import cls from './ProfilePage.module.scss';
-import { fetchProfileData, profileReducer } from 'entities/profile';
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
-import { EditableProfileCard } from 'widgets/editableProfileCard';
+import { fetchProfileData, profileReducer } from '@/entities/profile';
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks';
+import { EditableProfileCard } from '@/widgets/editableProfileCard';
 import { useParams } from 'react-router-dom';
-import { Page } from 'widgets/page/Page';
+import { Page } from '@/widgets/page/Page';
 
 interface ProfilePageProps {
   className?: string;

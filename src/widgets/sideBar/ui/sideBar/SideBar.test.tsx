@@ -1,8 +1,8 @@
 import { screen, fireEvent } from '@testing-library/react';
 
 import { SideBar } from './SideBar';
-import { componentRender } from 'shared/lib/tests';
-import { routePath } from 'shared/config/router/routePath';
+import { componentRender } from '@/shared/lib/tests';
+import { routePath } from '@/shared/config/router/routePath';
 
 describe('SideBar', () => {
   test('test render', () => {

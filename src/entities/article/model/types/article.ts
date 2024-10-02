@@ -1,4 +1,4 @@
-import { IUser } from 'entities/user';
+import { IUser } from '@/entities/user';
 
 export type ArticleBlockType = 'TEXT' | 'IMAGE' | 'CODE';
 
