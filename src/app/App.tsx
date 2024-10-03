@@ -19,11 +19,13 @@ export const App = () => {
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <NavBar />
-      <div className="content-page">
-        <SideBar />
-        <ErrorBoundary>{init && <AppRouter />}</ErrorBoundary>
-      </div>
+      <ErrorBoundary>
+        <NavBar />
+        <div className="content-page">
+          <SideBar />
+          <ErrorBoundary>{init && <AppRouter />}</ErrorBoundary>
+        </div>
+      </ErrorBoundary>
     </div>
   );
 };
