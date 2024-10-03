@@ -5,7 +5,10 @@ import cls from './Drawer.module.scss';
 import { Portal } from '../portal/Portal';
 import { useThemeContext } from '@/app/providers/themeProvider';
 import { Overlay } from '../overlay/Overlay';
-import { useAnimationLibs } from '@/shared/lib/components/animationProvider';
+import {
+  AnimationProvider,
+  useAnimationLibs,
+} from '@/shared/lib/components/animationProvider';
 // import { useModal } from 'shared/lib/hooks/useModal/useModal';
 
 // import { useDrag } from '@use-gesture/react';
@@ -114,7 +117,7 @@ export const DrawerContent = memo(function Drawer({
   );
 });
 
-export const Drawer = memo(function Drawer(props: DrawerProps) {
+const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
@@ -122,4 +125,10 @@ export const Drawer = memo(function Drawer(props: DrawerProps) {
   }
 
   return <DrawerContent {...props} />;
-});
+};
+
+export const Drawer = (props: DrawerProps) => (
+  <AnimationProvider>
+    <DrawerAsync {...props} />
+  </AnimationProvider>
+);
