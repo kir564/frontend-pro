@@ -7,6 +7,7 @@ import { Button } from '@/shared/ui';
 import { Page } from '@/widgets/page/Page';
 import { ListBox } from '@/shared/ui/popups';
 import { Dropdown } from '@/shared/ui/popups';
+import { RatingCard } from '@/entities/rating';
 
 interface MainPageProps {
   className?: string;
@@ -52,6 +53,11 @@ export const MainPage: FC<MainPageProps> = ({ className }) => {
           { content: 'second' },
           { content: 'third' },
         ]}
+      />
+      <RatingCard
+        hasFeedback
+        title={`оцените страницу`}
+        feedbackTitle={`Оставьте отзыв о статье:`}
       />
     </Page>
   );

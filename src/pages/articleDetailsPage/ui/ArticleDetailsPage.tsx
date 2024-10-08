@@ -9,6 +9,7 @@ import { articleDetailsPageReducer } from '../model/slice';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from './ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleRating } from '@/features/articleRating';
 
 interface articleDetailsPageProps {
   className?: string;
@@ -37,6 +38,7 @@ export const ArticleDetailsPage = memo(function ArticleDetailsPage({
       <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
+        <ArticleRating articleId={id} />
         <ArticleRecommendationsList />
         <ArticleDetailsComments id={id} />
       </Page>
